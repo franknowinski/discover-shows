@@ -5,7 +5,7 @@ class CreateArtists < ActiveRecord::Migration
       t.string :popularity
       t.string :image
       t.string :artist_id
-      t.references :user, index: true
+      t.integer :user_id
 
       t.timestamps null: false
     end

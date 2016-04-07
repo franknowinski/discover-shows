@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def angular
     render 'layouts/application'
   end
+
+  def logged_in?
+    @current_user ||= User.find(session[:id])
+  end
 end

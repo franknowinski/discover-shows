@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root 'application#angular'
   get '/auth/spotify/callback', to: 'user#spotify'
+
+  resources :artists, only: [:index, :show]
 end

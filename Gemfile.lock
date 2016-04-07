@@ -41,6 +41,7 @@ GEM
       sprockets (~> 3.0)
       tilt
     arel (6.0.3)
+    awesome_print (1.6.1)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -180,6 +181,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
+  awesome_print
   dotenv-rails
   jbuilder (~> 2.0)
   pry-byebug

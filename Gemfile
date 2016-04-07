@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'angular-rails-templates'
 gem 'rspotify'
+gem 'awesome_print', require: 'ap'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use ActiveModel has_secure_password

@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20160406063458) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "artists", ["user_id"], name: "index_artists_on_user_id"
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password"
+    t.string   "uid"
+    t.string   "provider"
     t.text     "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
