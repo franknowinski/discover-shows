@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406063458) do
+ActiveRecord::Schema.define(version: 20160407034154) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -19,8 +19,22 @@ ActiveRecord::Schema.define(version: 20160406063458) do
     t.string   "image"
     t.string   "artist_id"
     t.integer  "user_id"
+    t.integer  "jam_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "concerts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "concert_url"
+    t.integer  "zip_code"
+    t.integer  "artist_id"
+    t.datetime "date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -29,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160406063458) do
     t.string   "password"
     t.string   "uid"
     t.string   "provider"
+    t.integer  "zip_code"
     t.text     "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

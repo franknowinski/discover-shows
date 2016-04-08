@@ -4,4 +4,4 @@ function ArtistsController(items){
 
 angular
   .module('app')
-  .controller('ArtistsController', ArtistsController)
+  .controller('ArtistsController', ArtistsController);

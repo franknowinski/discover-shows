@@ -1,0 +1,22 @@
+<h3>Please enter the zip code in the area in which you want to attend upcoming concerts</h3>
+
+<form name="form" ng-submit="zip.getZipCode();">
+  <input
+      type="integer"
+      name="zipCode"
+      ng-model="zip.zip"
+      required="required"
+      pattern="[0-9]{5}"
+      placeholder="Zip Code">
+
+  <input type="submit">
+
+  <div ng-messages="form.zipCode.$error" ng-if="form.zipCode.$touched">
+    <div ng-message="required">You must enter a Zip Code</div>
+    <div ng-message="pattern">Please enter a valid zip code</div>
+  </div>
+</form>
+
+{{ zip.zipCode }}
+
+<!-- <a href="" ng-click="zip.getUser();">Get User</a> -->
