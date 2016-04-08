@@ -1,11 +1,11 @@
-function LoginController($http, $cookies, ZipService){
+function LoginController($http, $cookies, $location, LoginService){
   var ctrl = this;
 
   ctrl.id = '';
   ctrl.name = '';
   ctrl.email = '';
 
-  this.spotifyLogin = ZipService.getUser()
+  this.spotifyLogin = LoginService.getUser()
     .then(function(res){
       ctrl.id = res.data.id;
       ctrl.name = res.data.name;
@@ -14,6 +14,8 @@ function LoginController($http, $cookies, ZipService){
       $cookies.put('id', ctrl.id);
       $cookies.put('name', ctrl.name);
       $cookies.put('email', ctrl.email);
+
+      $location.path('/zipcode');
     });
 }
 

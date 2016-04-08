@@ -7,7 +7,7 @@ class UserController < ApplicationController
     @user.assign_artists
     session[:id] = @user.id
 
-    redirect_to '#/zipcode'
+    # redirect_to '#/zipcode'
   end
 
   def user
@@ -15,8 +15,7 @@ class UserController < ApplicationController
   end
 
   def zipcode
-    @current_user.zip_code = params[:zip_code]
-    binding.pry
+    @current_user.update(zip_code: params[:zip_code])
   end
 
   private
