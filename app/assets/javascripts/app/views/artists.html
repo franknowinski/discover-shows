@@ -1,8 +1,22 @@
-<h2>Your Top Artists</h2>
-{{ login.id }}
+<h2 id="artists-header">Your Top Artists</h2>
 
-<ul ng-repeat="artist in artists.artists">
-  <li><a ui-sref="artists.id({id: artist.id})">{{ artist.name }}</a></li>
-</ul>
+<div class="row">
+  <div class="col-sm-5">
+    <div class="col-sm-7">
+      <input type="text" ng-model="artists.search" ng-change="artists.refilter()" class="form-control clearfix" placeholder="Search Artist"><br>
+    </div>
+    <div class="clearfix"></div>
 
-<div ui-view></div>
+    <div class="col-sm-12" id="artist-scrollbar">
+      <ul ng-repeat="artist in artists.filteredList">
+        <li class="lead" id="artist-list"><a ui-sref="home.artists.id({id: artist.id})">{{ artist.name }}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-sm-7">
+    <ui-view></ui-view>
+  </div>
+</div>
+
+</row>

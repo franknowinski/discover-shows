@@ -14,7 +14,8 @@ angular
       })
       .state('home', {
         url: '/',
-        templateUrl: 'app/views/home.html'
+        templateUrl: 'app/views/home.html',
+        controller: 'HomeController as home'
       })
       .state('home.artists', {
         url: 'artists',
@@ -26,13 +27,16 @@ angular
           }
         }
       })
-      .state('artists.id', {
-        url: '/:id',
+      .state('home.artists.id', {
+        url: '/artist/:id',
         templateUrl: 'app/views/artist.html',
         controller: 'ArtistController as artist',
         resolve: {
           item: function($stateParams, ArtistService){
             return ArtistService.getArtist($stateParams.id)
+          },
+          singles: function($stateParams, ArtistService){
+            return ArtistService.getSongs($stateParams.id)
           }
         }
       })

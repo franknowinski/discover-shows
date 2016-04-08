@@ -1,10 +1,57 @@
+// Login
+
+#spotify-login {
+  text-align: center;
+  margin-top: 250px;
+  a {
+    color: rgb(34, 191, 84);
+  }
+}
+
+// Navbar
+
 #navbar {
-    list-style-type: none;
-    margin: 0;
-    li {
-      display: inline;
-      padding-top: 30px;
-      padding-left: 250px;
-      text-align: center;
-    }
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  // text-align: center;
+  li {
+    display: inline;
+    margin-left: 160px;
+  }
+}
+
+// Zip Code
+
+#zip-code {
+  margin-top: 200px;
+  text-align: center;
+}
+
+#zip-code-input {
+  margin-left: 430px;
+}
+
+#zip-errors div {
+  color: red;
+  padding-top: 5px;
+  margin-left: -100px;
+}
+
+// Artists
+
+#artists-header{
+  text-align: center;
+  padding: 20px;
+}
+
+#artist-scrollbar {
+  height: 415px;
+  overflow-y: auto;
+}
+
+#artist-list {
+  list-style: none;
+  margin-left: -41px;
 }

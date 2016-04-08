@@ -1,18 +1,28 @@
-<h3>Please enter the zip code in the area in which you want to attend upcoming concerts</h3>
+<div id="zip-code">
+  <h3 class="lead">Please enter the zip code in the area in which you want to attend upcoming concerts</h3>
 
-<form name="form" ng-submit="zip.getZipCode();">
-  <input
-      type="integer"
-      name="zipCode"
-      ng-model="zip.zip"
-      required="required"
-      pattern="[0-9]{5}"
-      placeholder="Zip Code">
+  <div class="row">
+    <form name="form" ng-submit="zip.getZipCode();">
+      <div class="col-sm-2">
+        <input
+            type="text"
+            name="zipCode"
+            class="form-control"
+            id="zip-code-input"
+            ng-model="zip.zip"
+            required="required"
+            pattern="[0-9]{5}"
+            placeholder="Zip Code">
+      </div>
 
-  <input type="submit">
+      <div class="col-2-sm">
+        <input type="submit" class="btn btn-success">
+      </div>
 
-  <div ng-messages="form.zipCode.$error" ng-if="form.zipCode.$touched">
-    <div ng-message="required">You must enter a Zip Code</div>
-    <div ng-message="pattern">Please enter a valid zip code</div>
+      <div ng-messages="form.zipCode.$error" ng-if="form.zipCode.$touched" id="zip-errors">
+        <div ng-message="required">You must enter a Zip Code</div>
+        <div ng-message="pattern">Please enter a valid zip code</div>
+      </div>
+    </form>
   </div>
-</form>
+</div>

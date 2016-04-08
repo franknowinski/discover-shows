@@ -4,7 +4,7 @@ class UserController < ApplicationController
 
   def spotify
     @user = User.from_omniauth(request.env['omniauth.auth'])
-    @user.assign_artists
+    Artist.assign_artists(@user)
     session[:id] = @user.id
   end
 
@@ -14,6 +14,11 @@ class UserController < ApplicationController
 
   def zipcode
     @current_user.update(zip_code: params[:zip_code])
+  end
+
+  def destroy
+    session.clear
+    render nothing: true
   end
 
   private

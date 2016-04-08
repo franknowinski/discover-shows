@@ -1,11 +1,22 @@
 class ArtistsController < ApplicationController
-  before_action :logged_in?
+  before_action :logged_in?, only: [:index]
+  before_action :set_artist, only: [:show, :songs]
 
   def index
     render json: @current_user.artists
   end
 
   def show
-    render json: Artist.find(params[:id])
+    render json: @artist
+  end
+
+  def songs
+    render json: @artist.songs
+  end
+
+  private
+
+  def set_artist
+    @artist = Artist.find(params[:id])
   end
 end

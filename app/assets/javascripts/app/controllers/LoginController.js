@@ -4,8 +4,8 @@ function LoginController($http, $cookies, $location, LoginService){
   ctrl.id = '';
   ctrl.name = '';
   ctrl.email = '';
-
-  this.spotifyLogin = LoginService.getUser()
+  
+  ctrl.spotifyLogin = LoginService.getUser()
     .then(function(res){
       ctrl.id = res.data.id;
       ctrl.name = res.data.name;

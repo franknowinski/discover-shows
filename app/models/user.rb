@@ -12,17 +12,6 @@ class User < ActiveRecord::Base
   end
 
   def top_artists
-    JSON.parse(`curl -X GET "https://api.spotify.com/v1/me/top/artists?limit=5" -H "Accept: application/json" -H "Authorization: Bearer #{self.token}"`)
+    JSON.parse(`curl -X GET "https://api.spotify.com/v1/me/top/artists?limit=10" -H "Accept: application/json" -H "Authorization: Bearer #{token}"`)
   end
-
-  def assign_artists
-    top_artists["items"].each do |artist|
-      a = Artist.find_or_create_by(name: artist["name"], popularity: artist["popularity"], artist_id: artist["id"])
-      self.artists << a
-    end
-  end
-  # def jam
-  #   binding.pry
-  #   `curl -X GET "http://api.jambase.com/artists?name=skrillex&page=0&api_key=532y74tzngj57shc64z3729m"`
-  # end
 end

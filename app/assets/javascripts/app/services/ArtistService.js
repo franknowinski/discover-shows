@@ -8,9 +8,8 @@ function ArtistService($http){
     return $http.get('/artists/' + id);
   }
 
-  this.getAlbums = function(id){
-    debugger;
-    // https://api.spotify.com/v1/artists/3ImqpXKKgkH5VydfgX1hd4/top-tracks?country=ES
+  this.getSongs = function(id){
+    return $http.get('/artists/' + id + '/songs');
   }
 }
 

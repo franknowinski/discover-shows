@@ -1,5 +1,8 @@
-<h2>Artist Name: {{ artist.artist.name }}</h2>
-
-<h2>Popularity: {{ artist.artist.popularity }}</h2>
-
-<h2>Id: {{ artist.artist.artist_id }}</h2>
+<div>
+  <p class="lead">{{ artist.artist.name }}</p>
+  <p class="lead">Popularity: {{ artist.artist.popularity }}</p>
+  <p class="lead">Top 10 Tracks: </p>
+  <ul ng-repeat="song in artist.songs">
+    <li>{{ song.name }} - {{ song.album }}</li>
+  </ul>
+</div>
