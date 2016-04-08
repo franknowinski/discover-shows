@@ -6,7 +6,7 @@ function ZipController($http, $cookies, $location, ZipService){
     ctrl.zipCode = this.zip;
 
     ZipService.persistZip(ctrl.zipCode);
-    $location.path('/artists');
+    $location.path('/');
   }
 }
 

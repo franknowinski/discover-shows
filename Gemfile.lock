@@ -41,9 +41,15 @@ GEM
       sprockets (~> 3.0)
       tilt
     arel (6.0.3)
+    autoprefixer-rails (6.3.3)
+      execjs
+      json
     awesome_print (1.6.1)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.2)
     coderay (1.1.1)
@@ -182,6 +188,7 @@ PLATFORMS
 DEPENDENCIES
   angular-rails-templates
   awesome_print
+  bootstrap-sass (~> 3.3.6)
   dotenv-rails
   jbuilder (~> 2.0)
   pry-byebug

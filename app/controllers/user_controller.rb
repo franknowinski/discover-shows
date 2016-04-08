@@ -6,8 +6,6 @@ class UserController < ApplicationController
     @user = User.from_omniauth(request.env['omniauth.auth'])
     @user.assign_artists
     session[:id] = @user.id
-
-    # redirect_to '#/zipcode'
   end
 
   def user

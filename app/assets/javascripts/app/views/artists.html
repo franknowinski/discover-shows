@@ -1,3 +1,8 @@
+<h2>Your Top Artists</h2>
+{{ login.id }}
+
 <ul ng-repeat="artist in artists.artists">
-  <li><a ui-sref="artist.id({id: artist.id})">{{ artist.name }}</a></li>
+  <li><a ui-sref="artists.id({id: artist.id})">{{ artist.name }}</a></li>
 </ul>
+
+<div ui-view></div>

@@ -12,8 +12,12 @@ angular
         templateUrl: 'app/views/zipcode.html',
         controller: 'ZipController as zip'
       })
-      .state('artists', {
-        url: '/artists',
+      .state('home', {
+        url: '/',
+        templateUrl: 'app/views/home.html'
+      })
+      .state('home.artists', {
+        url: 'artists',
         templateUrl: 'app/views/artists.html',
         controller: 'ArtistsController as artists',
         resolve: {
@@ -22,8 +26,8 @@ angular
           }
         }
       })
-      .state('artist.id', {
-        url: ':id',
+      .state('artists.id', {
+        url: '/:id',
         templateUrl: 'app/views/artist.html',
         controller: 'ArtistController as artist',
         resolve: {
