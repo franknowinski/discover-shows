@@ -26,10 +26,14 @@ class Artist < ActiveRecord::Base
 
   def upcoming_concerts
     events.each do |event|
-      if event["artists"].first["name"] == self.name
-        self.concerts.build(title: event["title"], date: event["formatted_datetime"], ticket_url: event["ticket_url"], status: event["ticket_status"], name: event["venue"]["name"], city: event["venue"]["city"], state: event["venue"]["region"])
+      if event["artists"].first["name"] == self.name && new_event(event)
+        self.concerts.create(title: event["title"], date: event["formatted_datetime"], ticket_url: event["ticket_url"], status: event["ticket_status"], name: event["venue"]["name"], city: event["venue"]["city"], state: event["venue"]["region"])
       end
     end
+  end
+
+  def new_event(event)
+    Concert.find_by(title: event["title"]).nil?
   end
 
   def events

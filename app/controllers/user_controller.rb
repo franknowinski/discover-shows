@@ -6,6 +6,7 @@ class UserController < ApplicationController
     user = User.from_omniauth(request.env['omniauth.auth'])
     Artist.assign_artists(user)
     session[:id] = user.id
+    redirect_to '#/artists'
   end
 
   def user

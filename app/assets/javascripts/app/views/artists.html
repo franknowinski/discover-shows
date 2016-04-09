@@ -1,4 +1,4 @@
-<h2 id="artists-header">Your Top Artists</h2>
+<h2 id="artists-header">{{ artists.firstName }}'s Top Artists</h2>
 
 <div class="row">
   <div class="col-sm-3">
@@ -7,8 +7,13 @@
     </div>
     <div class="clearfix"></div>
 
+    <p id="sort-by-links">
+      <a href="" ng-click="sort = ''">Most Listened To</a> |
+      <a href="" ng-click="sort = '-popularity'">Most popular</a>
+    </p>
+
     <div class="col-sm-12" id="artist-scrollbar">
-      <ul ng-repeat="artist in artists.filteredList">
+      <ul ng-repeat="artist in artists.filteredList | orderBy: sort">
         <li class="lead" id="artist-list"><a ui-sref="home.artists.id({id: artist.id})">{{ artist.name }}</a></li>
       </ul>
     </div>
@@ -18,5 +23,3 @@
     <ui-view></ui-view>
   </div>
 </div>
-
-</row>

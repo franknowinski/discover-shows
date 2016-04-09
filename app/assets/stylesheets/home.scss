@@ -1,3 +1,10 @@
+body {
+  font-family: "Circular", Helvetica, Arial, sans-serif;
+}
+// a {
+//   color: rgb(34, 191, 84);
+//
+// }
 // Login
 
 #spotify-login {
@@ -15,7 +22,6 @@
   margin: 0;
   padding: 20px;
   overflow: hidden;
-  // text-align: center;
   li {
     display: inline;
     margin-left: 160px;
@@ -58,4 +64,9 @@
 
 #artist-search {
   width: 250px;
+  margin-left: -7px;
+}
+
+#sort-by-links {
+  margin-left: 13px;
 }
