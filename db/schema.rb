@@ -25,16 +25,16 @@ ActiveRecord::Schema.define(version: 20160408073148) do
   end
 
   create_table "concerts", force: :cascade do |t|
+    t.string   "title"
     t.string   "name"
-    t.string   "address"
     t.string   "city"
     t.string   "state"
-    t.string   "concert_url"
-    t.integer  "zip_code"
+    t.string   "status"
+    t.string   "ticket_url"
     t.integer  "artist_id"
     t.datetime "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "songs", force: :cascade do |t|

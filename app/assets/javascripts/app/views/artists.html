@@ -1,9 +1,9 @@
 <h2 id="artists-header">Your Top Artists</h2>
 
 <div class="row">
-  <div class="col-sm-5">
+  <div class="col-sm-3">
     <div class="col-sm-7">
-      <input type="text" ng-model="artists.search" ng-change="artists.refilter()" class="form-control clearfix" placeholder="Search Artist"><br>
+      <input type="text" ng-model="artists.search" ng-change="artists.refilter()" class="form-control clearfix" placeholder="Search Artist" id="artist-search"><br>
     </div>
     <div class="clearfix"></div>
 
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div class="col-sm-7">
+  <div class="col-sm-9">
     <ui-view></ui-view>
   </div>
 </div>

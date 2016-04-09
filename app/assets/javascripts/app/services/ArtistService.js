@@ -11,6 +11,10 @@ function ArtistService($http){
   this.getSongs = function(id){
     return $http.get('/artists/' + id + '/songs');
   }
+
+  this.getConcerts = function(id){
+    return $http.get('/artists/' + id + '/concerts')
+  }
 }
 
 angular

@@ -1,6 +1,7 @@
-function ArtistController(item, singles, ArtistService){
+function ArtistController(item, tracks, events){
   this.artist = item.data;
-  this.songs = singles.data.splice(0, 10)
+  this.songs = tracks.data.splice(0, 10);
+  this.concerts = events.data;
 }
 
 angular

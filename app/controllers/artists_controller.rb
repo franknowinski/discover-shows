@@ -10,10 +10,6 @@ class ArtistsController < ApplicationController
     render json: @artist
   end
 
-  def songs
-    render json: @artist.songs
-  end
-
   private
 
   def set_artist

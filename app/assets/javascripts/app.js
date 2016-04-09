@@ -7,11 +7,6 @@ angular
         templateUrl: 'app/views/login.html',
         controller: 'LoginController as login'
       })
-      .state('zipcode', {
-        url: '/zipcode',
-        templateUrl: 'app/views/zipcode.html',
-        controller: 'ZipController as zip'
-      })
       .state('home', {
         url: '/',
         templateUrl: 'app/views/home.html',
@@ -35,8 +30,11 @@ angular
           item: function($stateParams, ArtistService){
             return ArtistService.getArtist($stateParams.id)
           },
-          singles: function($stateParams, ArtistService){
+          tracks: function($stateParams, ArtistService){
             return ArtistService.getSongs($stateParams.id)
+          },
+          events: function($stateParams, ArtistService){
+            return ArtistService.getConcerts($stateParams.id)
           }
         }
       })

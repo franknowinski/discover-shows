@@ -35,7 +35,7 @@
 
 #zip-errors div {
   color: red;
-  padding-top: 5px;
+  padding-bottom: 5px;
   margin-left: -100px;
 }
 
@@ -54,4 +54,8 @@
 #artist-list {
   list-style: none;
   margin-left: -41px;
+}
+
+#artist-search {
+  width: 250px;
 }

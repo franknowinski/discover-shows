@@ -1,8 +1,24 @@
-<div>
-  <p class="lead">{{ artist.artist.name }}</p>
-  <p class="lead">Popularity: {{ artist.artist.popularity }}</p>
-  <p class="lead">Top 10 Tracks: </p>
-  <ul ng-repeat="song in artist.songs">
-    <li>{{ song.name }} - {{ song.album }}</li>
-  </ul>
+<div class="row">
+  <div class="col-sm-6">
+    <p class="lead">{{ artist.artist.name }}</p>
+    <p class="lead">Popularity: {{ artist.artist.popularity }}</p>
+    <p class="lead">Top 10 Tracks: </p>
+    <ul ng-repeat="song in artist.songs">
+      <li>{{ song.name }} - {{ song.album }}</li>
+    </ul>
+  </div>
+
+  <div class="col-sm-6">
+    <h3>Upcoming Concerts</h3>
+    <ul ng-repeat="concert in artist.concerts">
+      <li>
+        <p>{{ concert.title }}</p>
+        <p>{{ concert.name }}</p>
+        <p>{{ concert.city }}, {{ concert.state }} </p>
+        <p>Status: {{ concert.status | uppercase }}</p>
+        <p><a href="{{ concert.ticket_url }}" target="_blank">Buy Tickets</a></p>
+        <p>{{ concert.date | date:medium }}</p>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 class Artist < ActiveRecord::Base
+  belongs_to :user
   has_many :songs
   has_many :concerts
 
@@ -6,35 +7,34 @@ class Artist < ActiveRecord::Base
     user.top_artists["items"].each do |a|
       artist = self.find_or_create_by(name: a["name"], popularity: a["popularity"], artist_id: a["id"])
       artist.top_tracks
+      artist.upcoming_concerts
       user.artists << artist
     end
   end
 
   def top_tracks
-    get_tracks["tracks"].each do |track|
+    artist_tracks["tracks"].each do |track|
       songs.new(name: track["name"], album: track["album"]["name"])
     end
   end
 
-  def get_tracks
+  def artist_tracks
     uri = URI.parse("https://api.spotify.com/v1/artists/#{self.artist_id}/top-tracks?country=SE")
     response = Net::HTTP.get_response(uri).body
     JSON.parse(response)
   end
 
-  def find_concerts(artist)
-    get_jam_id(artist)
-    get_concerts
+  def upcoming_concerts
+    events.each do |event|
+      if event["artists"].first["name"] == self.name
+        self.concerts.build(title: event["title"], date: event["formatted_datetime"], ticket_url: event["ticket_url"], status: event["ticket_status"], name: event["venue"]["name"], city: event["venue"]["city"], state: event["venue"]["region"])
+      end
+    end
   end
 
-  def get_jam_id(artist)
-    uri = URI.parse("http://api.jambase.com/artists?name=#{artist}&page=0&api_key=2sn59tm4crjszvtvba3c7w4f")
-    response = Net::HTTP.get_response(uri).body
-    self.jam_id = JSON.parse(response)["Artists"].first["Id"]
-  end
-
-  def get_concerts
-    uri = URI.parse("http://api.jambase.com/events?artistId=39941&zipCode=10921&page=0&api_key=2sn59tm4crjszvtvba3c7w4f")
+  def events
+    encoded_uri = URI.encode("http://api.bandsintown.com/artists/#{self.name}/events/recommended?location=use_geoip&radius=50&app_id=discover-shows&api_version=2.0&format=json")
+    uri = URI.parse(encoded_uri)
     response = Net::HTTP.get_response(uri).body
     JSON.parse(response)
   end
