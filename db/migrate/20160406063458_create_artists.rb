@@ -3,7 +3,6 @@ class CreateArtists < ActiveRecord::Migration
     create_table :artists do |t|
       t.string :name
       t.string :popularity
-      t.string :image
       t.string :artist_id
       t.integer :user_id
       t.integer :jam_id

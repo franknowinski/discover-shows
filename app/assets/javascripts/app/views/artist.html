@@ -1,4 +1,6 @@
 <div class="row">
+
+  <!-- Artist -->
   <div class="col-sm-6">
     <p class="lead">{{ artist.artist.name }}</p>
     <p class="lead">Popularity: {{ artist.artist.popularity }}</p>
@@ -8,8 +10,9 @@
     </ul>
   </div>
 
+  <!-- Artist's Upcoming Concerts -->
   <div class="col-sm-6">
-    <h3> {{ artist.concerts.length }} Upcoming Concerts</h3>
+    <h3 class="lead"> {{ artist.concerts.length }} Upcoming Concerts</h3>
 
     <div ng-show="artist.noUpcomingConcerts()">
       <p class="lead">{{ artist.artist.name}} has no upcoming concerts</p>
@@ -18,12 +21,13 @@
     <ul ng-repeat="concert in artist.concerts">
       <li>
         <p>{{ concert.title }}</p>
+        <p>Date: {{ concert.date | date:'medium' }}</p>
         <p>{{ concert.name }}</p>
         <p>{{ concert.city }}, {{ concert.state }} </p>
-        <p>Status: {{ concert.status | uppercase }}</p>
+        <p>Ticket status: {{ concert.status | uppercase }}</p>
         <p><a href="{{ concert.ticket_url }}" target="_blank">Buy Tickets</a></p>
-        <p>{{ concert.date | date:medium }}</p>
       </li>
+      <button class="btn btn-success" ng-click="artist.addConcert($index);">Add to Upcoming Concerts</button>
     </ul>
   </div>
 </div>

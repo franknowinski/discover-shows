@@ -2,6 +2,7 @@ class Artist < ActiveRecord::Base
   belongs_to :user
   has_many :songs
   has_many :concerts
+  has_attached_file :image
 
   def self.assign_artists(user)
     user.top_artists["items"].each do |a|
