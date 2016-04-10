@@ -2,11 +2,10 @@ class Artist < ActiveRecord::Base
   belongs_to :user
   has_many :songs
   has_many :concerts
-  has_attached_file :image
 
   def self.assign_artists(user)
     user.top_artists["items"].each do |a|
-      artist = self.find_or_create_by(name: a["name"], popularity: a["popularity"], artist_id: a["id"])
+      artist = self.find_or_create_by(name: a["name"], popularity: a["popularity"], artist_id: a["id"], image_url: a["images"].second["url"])
       artist.top_tracks
       artist.upcoming_concerts
       user.artists << artist

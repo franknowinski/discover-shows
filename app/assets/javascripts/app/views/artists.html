@@ -8,12 +8,12 @@
     <div class="clearfix"></div>
 
     <p id="sort-by-links">
-      <a href="" ng-click="sort = ''">Most Listened To</a> |
-      <a href="" ng-click="sort = '-popularity'">Most popular</a>
+      <a href="" ng-click="sort = ''; reverse = !reverse">Most Listened To</a> |
+      <a href="" ng-click="sort = 'popularity'; reverse = !reverse">Most popular</a>
     </p>
 
     <div class="col-sm-12" id="artist-scrollbar">
-      <ul ng-repeat="artist in artists.filteredList | orderBy: sort">
+      <ul ng-repeat="artist in artists.filteredList | orderBy:sort:reverse">
         <li class="lead" id="artist-list"><a ui-sref="home.artists.id({id: artist.id})">{{ artist.name }}</a></li>
       </ul>
     </div>

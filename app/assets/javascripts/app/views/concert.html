@@ -1,0 +1,8 @@
+<li>
+  <p>{{ artist.concert.title }}</p>
+  <p>Date: {{ artist.concert.date | date:'medium' }}</p>
+  <p>{{ artist.concert.name }}</p>
+  <p>{{ artist.concert.city }}, {{ artist.concert.state }} </p>
+  <p>Ticket status: {{ artist.concert.status | uppercase }}</p>
+  <p><a href="{{ concert.ticket_url }}" target="_blank">Buy Tickets</a></p>
+</li>

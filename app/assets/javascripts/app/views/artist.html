@@ -2,8 +2,10 @@
 
   <!-- Artist -->
   <div class="col-sm-6">
-    <p class="lead">{{ artist.artist.name }}</p>
-    <p class="lead">Popularity: {{ artist.artist.popularity }}</p>
+    <div class="row">
+      <img src="{{ artist.artist.image_url }}" class="img-rounded" id="artist-image" alt="artist-image">
+      <p class="lead col-sm-7">{{ artist.artist.name }}</p>
+    </div>
     <p class="lead">Top 10 Tracks: </p>
     <ul ng-repeat="song in artist.songs">
       <li>{{ song.name }} - {{ song.album }}</li>
@@ -19,14 +21,15 @@
     </div>
 
     <ul ng-repeat="concert in artist.concerts">
-      <li>
+      <concert name="concert"></concert>
+      <!-- <li>
         <p>{{ concert.title }}</p>
         <p>Date: {{ concert.date | date:'medium' }}</p>
         <p>{{ concert.name }}</p>
         <p>{{ concert.city }}, {{ concert.state }} </p>
         <p>Ticket status: {{ concert.status | uppercase }}</p>
         <p><a href="{{ concert.ticket_url }}" target="_blank">Buy Tickets</a></p>
-      </li>
+      </li> -->
       <button class="btn btn-success" ng-click="artist.addConcert($index);">Add to Upcoming Concerts</button>
     </ul>
   </div>

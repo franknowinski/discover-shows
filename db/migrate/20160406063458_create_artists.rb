@@ -4,8 +4,8 @@ class CreateArtists < ActiveRecord::Migration
       t.string :name
       t.string :popularity
       t.string :artist_id
+      t.string :image_url
       t.integer :user_id
-      t.integer :jam_id
 
       t.timestamps null: false
     end

@@ -43,5 +43,10 @@ angular
         templateUrl: 'app/views/upcoming_concerts.html',
         controller: 'UpcomingConcertsController as events'
       });
+      // .state('home.browse_concerts', {
+      //   url: 'browse-concerts',
+      //   templateUrl: 'app/views/browse_concerts.html',
+      //   controller: 'UpcomingConcertsController as events'
+      // });
     $urlRouterProvider.otherwise('/login')
   });
