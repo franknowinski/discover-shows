@@ -3,15 +3,7 @@
 <p>Sort by:
   <a href="" ng-click="sort = '-date'; reverse = !reverse">Date</a>
 </p>
-<ul ng-repeat="event in events.upcomingConcerts | orderBy:sort:reverse">
-  <concert name="event"></concert>
-  <!-- <li>
-    <p>{{ event.title }} - {{ event.name }}</p>
-    <p>Date: {{ event.date | date:'medium' }}</p>
-    <p>Venue: {{ event.name }}</p>
-    <p>{{ event.city }}, {{ event.state }} </p>
-    <p>Ticket status: {{ event.status | uppercase }}</p>
-    <p><a href="{{ event.ticket_url }}" target="_blank">Buy Tickets</a></p>
-  </li> -->
+<ul ng-repeat="concert in events.upcomingConcerts | orderBy:sort:reverse">
+  <concert name="concert"></concert>
   <button class="btn btn-danger" ng-click="events.removeConcert($index);">Remove Show</button>
 </ul>

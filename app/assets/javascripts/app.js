@@ -33,8 +33,8 @@ angular
           tracks: function($stateParams, ArtistService){
             return ArtistService.getSongs($stateParams.id)
           },
-          events: function($stateParams, ArtistService){
-            return ArtistService.getConcerts($stateParams.id)
+          events: function($stateParams, ConcertService){
+            return ConcertService.getConcerts($stateParams.id)
           }
         }
       })
@@ -42,11 +42,16 @@ angular
         url: 'upcoming-concerts',
         templateUrl: 'app/views/upcoming_concerts.html',
         controller: 'UpcomingConcertsController as events'
+      })
+      .state('home.browse_concerts', {
+        url: 'browse-concerts',
+        templateUrl: 'app/views/browse_concerts.html',
+        controller: 'BrowseConcertsController as events'
+        // resolve: {
+        //   items: function(ArtistService){
+        //     return ArtistService.get
+        //   }
+        // }
       });
-      // .state('home.browse_concerts', {
-      //   url: 'browse-concerts',
-      //   templateUrl: 'app/views/browse_concerts.html',
-      //   controller: 'UpcomingConcertsController as events'
-      // });
     $urlRouterProvider.otherwise('/login')
   });

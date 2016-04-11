@@ -1,4 +1,4 @@
-function ArtistController(item, tracks, events, ArtistService){
+function ArtistController(item, tracks, events, ConcertService){
   this.artist = item.data;
   this.songs = tracks.data.splice(0, 10);
   this.concerts = events.data;
@@ -9,7 +9,7 @@ function ArtistController(item, tracks, events, ArtistService){
 
   this.addConcert = function(index){
     var concert_id = this.concerts[index].id;
-    ArtistService.addUpcomingConcert(concert_id);
+    ConcertService.addUpcomingConcert(concert_id);
   };
 }
 

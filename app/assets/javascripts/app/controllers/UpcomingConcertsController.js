@@ -1,16 +1,16 @@
-function UpcomingConcertsController($scope, ArtistService){
+function UpcomingConcertsController(ConcertService){
   var ctrl = this;
 
   ctrl.upcomingConcerts = '';
 
-  ctrl.getUpcomingConcerts = ArtistService.getUpcomingConcerts()
+  ctrl.getUpcomingConcerts = ConcertService.getUpcomingConcerts()
     .then(function(res){
       ctrl.upcomingConcerts = res.data;
     });
 
   ctrl.removeConcert = function(index){
     var concert = ctrl.upcomingConcerts[index];
-    ArtistService.removeUpcomingConcert(concert.id)
+    ConcertService.removeUpcomingConcert(concert.id)
       .then(function(res){
         ctrl.upcomingConcerts.splice(index,1);
       })

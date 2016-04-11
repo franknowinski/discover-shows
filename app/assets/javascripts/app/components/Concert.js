@@ -3,7 +3,7 @@ var Concert = {
     name: '='
   },
   templateUrl: 'app/views/concert.html',
-  controller: function(ArtistService){
+  controller: function(){
     var ctrl = this;
 
     ctrl.concert = this.name;

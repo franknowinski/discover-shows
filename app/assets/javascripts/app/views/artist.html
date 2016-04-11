@@ -22,14 +22,6 @@
 
     <ul ng-repeat="concert in artist.concerts">
       <concert name="concert"></concert>
-      <!-- <li>
-        <p>{{ concert.title }}</p>
-        <p>Date: {{ concert.date | date:'medium' }}</p>
-        <p>{{ concert.name }}</p>
-        <p>{{ concert.city }}, {{ concert.state }} </p>
-        <p>Ticket status: {{ concert.status | uppercase }}</p>
-        <p><a href="{{ concert.ticket_url }}" target="_blank">Buy Tickets</a></p>
-      </li> -->
       <button class="btn btn-success" ng-click="artist.addConcert($index);">Add to Upcoming Concerts</button>
     </ul>
   </div>
