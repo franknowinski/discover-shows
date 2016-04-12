@@ -1,14 +1,14 @@
 <h3 id="artists-header">Your Top Artists</h3><hr>
 
 <div id="artists-section" class="row">
-  <div class="col-sm-3">
+  <div class="col-sm-3" id="list-user-artists">
     <div class="col-sm-7">
       <input type="text" ng-model="artists.search" ng-change="artists.refilter()" class="form-control clearfix" placeholder="Search Artist" id="artist-search"><br>
     </div>
     <div class="clearfix"></div>
 
     <p id="sort-by-links">
-      <a href="" ng-click="sort = ''; reverse = !reverse">Most Listened To</a> |
+      <a href="" ng-click="sort = ''; reverse = !reverse">Most listened to</a> |
       <a href="" ng-click="sort = 'popularity'; reverse = !reverse">Most popular</a>
     </p>
 

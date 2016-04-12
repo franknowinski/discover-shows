@@ -14,7 +14,7 @@ class Artist < ActiveRecord::Base
 
   def top_tracks
     artist_tracks["tracks"].each do |track|
-      songs.new(name: track["name"], album: track["album"]["name"])
+      songs.new(name: track["name"], album: track["album"]["name"], song_url: track["external_urls"]["spotify"])
     end
   end
 
