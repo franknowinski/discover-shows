@@ -1,10 +1,8 @@
 body {
   font-family: "Circular", Helvetica, Arial, sans-serif;
+  background-color: #f8f8f8;
 }
-// a {
-//   color: rgb(34, 191, 84);
-//
-// }
+
 // Login
 
 #spotify-login {
@@ -18,62 +16,20 @@ body {
 // Navbar
 
 #navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 20px;
-  overflow: hidden;
-  li {
-    display: inline;
-    margin-left: 100px;
+  width: 100%;
+  padding-top: 8px;
+  p, a {
+    margin-left: 85px;
+    font-size: 1.3em;
+    color: white;
+  }
+  a:hover {
+    color: rgb(0, 217, 90);
   }
 }
 
-// Zip Code
+// Page
 
-#zip-code {
-  margin-top: 200px;
-  text-align: center;
-}
-
-#zip-code-input {
-  margin-left: 430px;
-}
-
-#zip-errors div {
-  color: red;
-  padding-bottom: 5px;
-  margin-left: -100px;
-}
-
-// Artists
-
-#artists-header{
-  text-align: center;
-  padding: 20px;
-}
-
-#artist-scrollbar {
-  height: 415px;
-  overflow-y: auto;
-}
-
-#artist-list {
-  list-style: none;
-  margin-left: -41px;
-}
-
-#artist-search {
-  width: 250px;
-  margin-left: -7px;
-}
-
-#artist-image {
-  height: 150px;
-  width: 150px;
-  float: left;
-  margin-left: 17px;
-}
-
-#sort-by-links {
-  margin-left: 13px;
+#page {
+  margin-top: 110px;
 }

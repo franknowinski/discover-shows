@@ -17,6 +17,11 @@ function ConcertService($http, $cookies){
     var user_id = $cookies.get('id');
     return $http.delete('/user/' + user_id + '/upcoming_concerts/' + concert_id);
   };
+
+  this.getAllConcerts = function(){
+    var user_id = $cookies.get('id');
+    return $http.get('/user/' + user_id + '/all-concerts');
+  };
 }
 
 angular

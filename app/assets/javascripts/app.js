@@ -46,12 +46,12 @@ angular
       .state('home.browse_concerts', {
         url: 'browse-concerts',
         templateUrl: 'app/views/browse_concerts.html',
-        controller: 'BrowseConcertsController as events'
-        // resolve: {
-        //   items: function(ArtistService){
-        //     return ArtistService.get
-        //   }
-        // }
+        controller: 'BrowseConcertsController as events',
+        resolve: {
+          items: function(ConcertService){
+            return ConcertService.getAllConcerts();
+          }
+        }
       });
     $urlRouterProvider.otherwise('/login')
   });

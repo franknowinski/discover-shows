@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get '/auth/spotify/callback', to: 'user#spotify'
   get '/user', to: 'user#user'
   post '/zipcode', to: 'user#zipcode'
+
   resources :user, only: [:destroy] do
     resources :upcoming_concerts, only: [:index, :create, :destroy]
+    get '/all-concerts', to: 'concerts#show'
   end
 
   resources :artists, only: [:index, :show] do

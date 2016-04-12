@@ -1,4 +1,5 @@
-function BrowseConcertsController(){
+function BrowseConcertsController(items){
+  this.concerts = items.data;
 }
 
 angular
