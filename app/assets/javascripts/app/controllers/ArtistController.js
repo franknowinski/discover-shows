@@ -6,11 +6,6 @@ function ArtistController(item, tracks, events, ConcertService){
   this.noUpcomingConcerts = function(){
     return this.concerts.length === 0;
   };
-
-  this.addConcert = function(index){
-    var concert_id = this.concerts[index].id;
-    ConcertService.addUpcomingConcert(concert_id);
-  };
 }
 
 angular

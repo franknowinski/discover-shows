@@ -11,9 +11,6 @@
 
 #artists-section {
   margin-top: 17px;
-  // border: 1px solid #eeeeee;
-  // padding-top: 25px;
-  // background-color: white;
 }
 
 #artist-not-found{
@@ -48,7 +45,7 @@
 
 #artist-scrollbar {
   margin-top: 10px;
-  height: 375px;
+  height: 370px;
   overflow-y: auto;
 }
 
@@ -64,26 +61,18 @@
   border-radius: 5px;
   width: 251px;
   margin-left: 13px;
+  box-shadow: 0px 1px 1px lightgray;
 }
 
 #list-artist {
   margin-left: 10px;
   padding: 20px;
   width: 490px;
-  height: 531px;
+  height: 527px;
   border: 1px solid #eeeeee;
   background-color: white;
   border-radius: 5px;
-}
-
-#list-concerts {
-  height: 531px;
-  width: 380px;
-  margin-left: 10px;
-  padding: 20px 10px;
-  border: 1px solid #eeeeee;
-  background-color: white;
-  border-radius: 5px;
+  box-shadow: 0px 1px 1px lightgray;
 }
 
 #artist-display {
@@ -114,12 +103,13 @@
 }
 
 #top-tracks-header {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 18px;
 }
 .top-tracks {
   margin-top: 20px;
-  font-size: 18px;
+  margin-left: -4px;
+  font-size: 16px;
 }
 
 #list-top-tracks {
@@ -128,5 +118,8 @@
   li {
     list-style-type: none;
     margin-left: -35px;
+    a:hover {
+      text-decoration: none;
+    }
   }
 }

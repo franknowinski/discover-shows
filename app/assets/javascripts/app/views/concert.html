@@ -1,8 +1,11 @@
-<li>
-  <p>{{ artist.concert.title }}</p>
-  <p>Date: {{ artist.concert.date | date:'medium' }}</p>
-  <p>{{ artist.concert.name }}</p>
-  <p>{{ artist.concert.city }}, {{ artist.concert.state }} </p>
-  <p>Ticket status: {{ artist.concert.status | uppercase }}</p>
-  <p><a href="{{ artist.concert.ticket_url }}" target="_blank">Buy Tickets</a></p>
-</li>
+<div>
+  <li class="list-concert">
+    <p>{{ artist.concert.title }}</p>
+    <p>Date: {{ artist.concert.date | date:'medium' }}</p>
+    <p>{{ artist.concert.name }}</p>
+    <p>{{ artist.concert.city }}, {{ artist.concert.state }} </p>
+    <p>Ticket status: {{ artist.concert.status | uppercase }}</p>
+    <p><a href="{{ artist.concert.ticket_url }}" target="_blank">Buy Tickets</a></p>
+  </li>
+  <button class="btn btn-success" ng-click="artist.addConcert($index);">Add to Upcoming Concerts</button>
+</div>

@@ -17,15 +17,16 @@
 
   <!-- Artist's Upcoming Concerts -->
   <div class="col-sm-6" id="list-concerts">
-    <h3 class="lead"> {{ artist.concerts.length }} Upcoming Concerts</h3>
+    <h3 ng-show="!artist.noUpcomingConcerts()" id="upcoming-concerts-header"> {{ artist.concerts.length }} Upcoming Concerts</h3><hr>
 
     <div ng-show="artist.noUpcomingConcerts()">
-      <p class="lead">{{ artist.artist.name}} has no upcoming concerts</p>
+      <p id="no-upcoming-concerts">{{ artist.artist.name}} has no upcoming concerts</p>
     </div>
 
-    <ul ng-repeat="concert in artist.concerts">
-      <concert name="concert"></concert>
-      <button class="btn btn-success" ng-click="artist.addConcert($index);">Add to Upcoming Concerts</button>
-    </ul>
+    <div id="concerts-scrollbar">
+      <ul ng-repeat="concert in artist.concerts" class="concert-box">
+        <concert name="concert"></concert>
+      </ul>
+    </div>
   </div>
 </div>
