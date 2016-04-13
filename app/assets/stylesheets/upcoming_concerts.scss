@@ -33,22 +33,14 @@
   font-size: 24px;
 }
 
-.remove-concert-button{
+.remove-concert-button {
   float: right;
   margin-right: 159px;
-  margin-top: -70px;
+  margin-top: -73px;
   box-shadow: 1px 1px 1px gray;
   background-color: rgb(34, 191, 84);
-  // border: 1px solid rgb(34, 191, 84);
-  // color: black;
-}
-
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: #fff;
-    background-color: #00b3db;
-    border-color: #285e8e; /*set the color you want here*/
 }
 
 .concert-title {
-  margin-bottom: 52px;
+  margin-bottom: 51px;
 }

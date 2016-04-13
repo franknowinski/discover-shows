@@ -1,5 +1,18 @@
-<div ng-repeat="artist in events.concerts">
-  <ul ng-repeat="concert in artist">
-    <concert name="concert"></concert>
+<div id="browse-concerts-container">
+  <h2 id="browse-concerts-header">Browse Concerts</h2><hr>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <input type="text" id="browse-concerts-searchbar" class="form-control" placeholder="Search Concert" ng-model="search">
+    </div>
+    <div class="col-sm-2">
+      <p id="browse-sort-menu">Sort by:
+        <a href="" ng-click="sort = '-date'; reverse = !reverse">Date</a>
+      </p>
+    </div>
+  </div>
+
+  <ul ng-repeat="concert in events.concerts | filter:search | orderBy:sort:reverse">
+    <upcoming-concert name="concert"></upcoming-concert>
   </ul>
 </div>

@@ -1,11 +1,11 @@
 function UpcomingConcertsController(items, ConcertService){
   var ctrl = this;
-  
+
   ctrl.upcomingConcerts = items.data;
 
-  ctrl.concertArtist = function(){
-    return ConcertService.getArtist();
-  }
+  // ctrl.concertArtist = function(){
+  //   return ConcertService.getArtist();
+  // }
 
   ctrl.removeConcert = function(index){
     var concert = ctrl.upcomingConcerts[index];

@@ -1,10 +1,18 @@
 <div id="upcoming-concerts-container">
   <h2 id="upcoming-concerts-header">Upcoming Concerts<hr></h2>
 
-  <p>Sort by:
-    <a href="" ng-click="sort = '-date'; reverse = !reverse">Date</a>
-  </p>
-  <ul ng-repeat="concert in events.upcomingConcerts | orderBy:sort:reverse">
+  <div class="row">
+    <div class="col-sm-3">
+      <input type="text" id="browse-concerts-searchbar" class="form-control" placeholder="Search Concert" ng-model="search">
+    </div>
+    <div class="col-sm-2">
+      <p id="browse-sort-menu">Sort by:
+        <a href="" ng-click="sort = '-date'; reverse = !reverse">Date</a>
+      </p>
+    </div>
+  </div>
+
+  <ul ng-repeat="concert in events.upcomingConcerts | filter:search | orderBy:sort:reverse">
     <upcoming-concert name="concert"></upcoming-concert>
     <button class="btn btn-success remove-concert-button" ng-click="events.removeConcert($index);">Remove Show</button>
   </ul>

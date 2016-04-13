@@ -7,7 +7,7 @@ class ConcertsController < ApplicationController
   end
 
   def show
-    render json: @current_user.artists.map(&:concerts)
+    render json: @current_user.artists.map(&:concerts).flatten
   end
 
   private
