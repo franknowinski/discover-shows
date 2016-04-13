@@ -9,7 +9,7 @@ var Concert = {
     ctrl.concert = this.name;
 
     ctrl.addConcert = function(){
-      ConcertService.addUpcomingConcert(this.name.id);
+      ConcertService.addUpcomingConcert(this.concert.id);
     };
   },
   controllerAs: 'artist'

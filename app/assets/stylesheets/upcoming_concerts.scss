@@ -1,0 +1,54 @@
+#upcoming-concerts-container {
+  background-color: #f8f8f8;
+  padding: 20px;
+  margin-right: -8px;
+  margin-top: -40px;
+}
+
+#upcoming-concerts-header {
+  font-size: 26px;
+  font-weight: 300;
+  color: #2ebd59;
+  text-align: center;
+  margin-top: -20px;
+  padding: 20px;
+  margin-bottom: -20px;
+}
+
+.upcoming-concert-tab {
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  margin-right: 27px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px gray;
+}
+
+.concert-details {
+  font-size: 18px;
+}
+
+.concert-artist-name {
+  font-size: 24px;
+}
+
+.remove-concert-button{
+  float: right;
+  margin-right: 159px;
+  margin-top: -70px;
+  box-shadow: 1px 1px 1px gray;
+  background-color: rgb(34, 191, 84);
+  // border: 1px solid rgb(34, 191, 84);
+  // color: black;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
+}
+
+.concert-title {
+  margin-bottom: 52px;
+}

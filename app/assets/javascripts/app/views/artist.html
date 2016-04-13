@@ -17,7 +17,7 @@
 
   <!-- Artist's Upcoming Concerts -->
   <div class="col-sm-6" id="list-concerts">
-    <h3 ng-show="!artist.noUpcomingConcerts()" id="upcoming-concerts-header"> {{ artist.concerts.length }} Upcoming Concerts</h3><hr>
+    <h3 ng-show="!artist.noUpcomingConcerts()" id="upcoming-concerts-header"> {{ artist.concerts.length }} Upcoming Concerts<hr></h3>
 
     <div ng-show="artist.noUpcomingConcerts()">
       <p id="no-upcoming-concerts">{{ artist.artist.name}} has no upcoming concerts</p>

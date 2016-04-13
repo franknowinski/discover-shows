@@ -1,6 +1,6 @@
 function ConcertService($http, $cookies){
   this.getConcerts = function(id){
-    return $http.get('/artists/' + id + '/concerts')
+    return $http.get('/artists/' + id + '/concerts');
   };
 
   this.getUpcomingConcerts = function(id){

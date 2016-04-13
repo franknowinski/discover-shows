@@ -41,7 +41,12 @@ angular
       .state('home.upcoming_concerts', {
         url: 'upcoming-concerts',
         templateUrl: 'app/views/upcoming_concerts.html',
-        controller: 'UpcomingConcertsController as events'
+        controller: 'UpcomingConcertsController as events',
+        resolve: {
+          items: function(ConcertService){
+            return ConcertService.getUpcomingConcerts();
+          }
+        }
       })
       .state('home.browse_concerts', {
         url: 'browse-concerts',
