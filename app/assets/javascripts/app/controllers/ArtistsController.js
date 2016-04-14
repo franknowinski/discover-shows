@@ -7,6 +7,13 @@ function ArtistsController(items, $filter, $cookies){
   };
 
   this.refilter();
+
+  this.view = true;
+  
+  this.changeViewStatus = function(){
+    this.view = false;
+  }
+
 }
 
 angular

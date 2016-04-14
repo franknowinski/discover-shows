@@ -1,5 +1,5 @@
 var SearchBar = {
-  templateUrl: 'app/views/search_bar.html'
+  templateUrl: 'app/views/search_bar.html',
   controller: function(){},
   controllerAs: 'events'
 }

@@ -2,13 +2,13 @@
   <div class="navbar-header">
     <p class="navbar-brand">Discover Shows</p>
   </div>
-  
+
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
-      <li class="acitve"><a ui-sref="home.artists">Top Artists<span class="sr-only">(current)</span></a></li>
-      <li><a ui-sref="home.upcoming_concerts">Upcoming Concerts</a></li>
-      <li><a ui-sref="home.browse_concerts">Browse Concerts</a></li>
-      <li><a ng-click="home.logoutUser();">Logout</a></li>
+      <li><a ui-sref-active="active" ui-sref="home.artists">Top Artists<span class="sr-only">(current)</span></a></li>
+      <li><a ui-sref-active="active" ui-sref="home.upcoming_concerts">Upcoming Concerts</a></li>
+      <li><a ui-sref-active="active" ui-sref="home.browse_concerts">Browse Concerts</a></li>
+      <li><a ui-sref-active="active" ng-click="home.logoutUser();">Logout</a></li>
     </ul>
   </div>
 </nav>

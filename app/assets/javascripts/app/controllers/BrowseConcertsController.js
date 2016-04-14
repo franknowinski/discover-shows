@@ -2,20 +2,13 @@ function BrowseConcertsController(items, ArtistService, $filter){
   var ctrl = this;
   ctrl.concerts = items.data;
 
-  // ctrl.artists = '';
-  //
-  // ctrl.getArtists = ArtistService.getArtists()
-  //     .then(function(res){
-  //       ctrl.artists = res.data;
-  //     });
+  this.search = '';
 
-  // ctrl.search = '';
-  //
-  // ctrl.refilter = function(){
-  //   ctrl.filteredList = $filter('filter')(ctrl.artists, ctrl.search);
-  // }
-  //
-  // ctrl.refilter();
+  this.refilter = function(){
+    this.filteredList = $filter('filter')(this.concerts, this.search);
+  };
+
+  this.refilter();
 }
 
 angular
