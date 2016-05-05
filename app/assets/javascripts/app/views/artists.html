@@ -1,3 +1,4 @@
+<!-- {{ artists.artists}} -->
  <div id="artists-container">
   <h3 id="artists-header">Your Top Artists</h3><hr>
 
@@ -14,7 +15,9 @@
       </p>
 
       <div class="col-sm-12" id="artist-scrollbar">
-        <ul ng-repeat="artist in artists.filteredList | orderBy:sort:reverse">
+        <!-- <ul ng-repeat="artist in artists.filteredList | orderBy:sort:reverse"> -->
+        <ul ng-repeat="artist in artists.artists">
+
           <li class="artist-list-item" ><a ng-click="artists.changeViewStatus()" ui-sref="home.artists.id({id: artist.id})">{{ artist.name }}</a></li>
         </ul>
         <span ng-show="artists.filteredList.length == 0" id="artist-not-found">Artist not found</span>
@@ -28,9 +31,4 @@
       <ui-view></ui-view>
     </div>
   </div>
-  <!-- <script>
-    $(function(){
-      debugger;
-    });
-  </script> -->
 </div>

@@ -9,6 +9,12 @@ class ApplicationController < ActionController::Base
     render 'layouts/application'
   end
 
+  def spotify
+    user = User.from_omniauth(request.env['omniauth.auth'])
+    session[:id] = user.id
+    redirect_to '#/artists'
+  end
+
   def logged_in?
     @current_user ||= User.find(session[:id])
   end

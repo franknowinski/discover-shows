@@ -1,17 +1,21 @@
-function ArtistsController(items, $filter, $cookies){
-  this.artists = items.data;
-  this.search = '';
+function ArtistsController(Artist, $filter, $cookies){
+  // items
+  // this.artists = items.data;
+  
+  var ctrl = this;
+  ctrl.artists = Artist.query();
+  ctrl.search = '';
 
-  this.refilter = function(){
-    this.filteredList = $filter('filter')(this.artists, this.search);
+  ctrl.refilter = function(){
+    ctrl.filteredList = $filter('filter')(ctrl.artists, ctrl.search);
   };
 
-  this.refilter();
+  ctrl.refilter();
 
-  this.view = true;
-  
-  this.changeViewStatus = function(){
-    this.view = false;
+  ctrl.view = true;
+
+  ctrl.changeViewStatus = function(){
+    ctrl.view = false;
   }
 
 }

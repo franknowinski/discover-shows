@@ -3,8 +3,5 @@
 //= require angular
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require angular-resource
 //= require_tree .
-
-$(function(){
-  // $('.artist-list-item')[0].click();/
-})

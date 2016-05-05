@@ -1,4 +1,4 @@
-class ConcertsController < ApplicationController
+class Api::V1::ConcertsController < ApplicationController
   before_action :logged_in?, only: [:show]
   before_action :set_concerts, only: [:index]
 

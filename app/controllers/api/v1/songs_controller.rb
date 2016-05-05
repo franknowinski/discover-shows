@@ -1,4 +1,4 @@
-class SongsController < ApplicationController
+class Api::V1::SongsController < ApplicationController
   before_action :set_songs, only: [:index]
 
   def index

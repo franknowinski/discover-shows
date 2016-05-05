@@ -1,4 +1,4 @@
-class UpcomingConcertsController < ApplicationController
+class Api::V1::UpcomingConcertsController < ApplicationController
   before_action :set_user, only: [:index, :create, :destroy]
   before_action :set_concert, only: [:create]
 

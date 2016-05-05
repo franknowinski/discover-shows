@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class Api::V1::UserController < ApplicationController
   before_action :logged_in?, only: [:user]
 
   def spotify

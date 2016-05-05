@@ -1,6 +1,6 @@
 function ArtistService($http, $cookies){
   this.getArtists = function(){
-    return $http.get('/artists');
+    return $http.get('/api/v1/artists');
   };
 
   this.getArtist = function(id){
