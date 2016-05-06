@@ -16,28 +16,22 @@ angular
         url: 'artists',
         templateUrl: 'app/views/artists.html',
         controller: 'ArtistsController as artists'
-        // ,
-        // resolve: {
-        //   items: function( ArtistService){
-        //     return ArtistService.getArtists();
-        //   }
-        // }
       })
       .state('home.artists.id', {
-        url: '/artist/:id',
+        url: '/:id',
         templateUrl: 'app/views/artist.html',
-        controller: 'ArtistController as artist',
-        resolve: {
-          item: function($stateParams, ArtistService){
-            return ArtistService.getArtist($stateParams.id)
-          },
-          tracks: function($stateParams, ArtistService){
-            return ArtistService.getSongs($stateParams.id)
-          },
-          events: function($stateParams, ConcertService){
-            return ConcertService.getConcerts($stateParams.id)
-          }
-        }
+        controller: 'ArtistController as artist'
+        // resolve: {
+        //   item: function($stateParams, ArtistService){
+        //     return ArtistService.getArtist($stateParams.id)
+        //   },
+        //   tracks: function($stateParams, ArtistService){
+        //     return ArtistService.getSongs($stateParams.id)
+        //   },
+        //   events: function($stateParams, ConcertService){
+        //     return ConcertService.getConcerts($stateParams.id)
+        //   }
+        // }
       })
       .state('home.upcoming_concerts', {
         url: 'upcoming-concerts',

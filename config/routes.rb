@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'upcoming_concerts/create'
 
-      get 'user', to: 'user#user'
+      resource :users, only: [:show]
+
       post 'zipcode', to: 'user#zipcode'
 
       resources :user, only: [:destroy] do

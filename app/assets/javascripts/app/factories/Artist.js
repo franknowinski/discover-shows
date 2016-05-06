@@ -1,10 +1,8 @@
 function Artist($resource) {
-
-  var Artist = $resource('/api/v1/artists/:id/', {artist_id: '@artist_id'}, {
-     query: { method: 'GET', isArray: true }
+  return $resource('/api/v1/artists/:id/', {artist_id: '@artist_id'}, {
+     query: { method: 'GET', isArray: true },
+     get: { method: 'GET' }
   });
-
-  return Artist;
 };
 
 angular

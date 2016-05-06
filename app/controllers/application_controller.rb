@@ -10,8 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def spotify
-    user = User.from_omniauth(request.env['omniauth.auth'])
-    session[:id] = user.id
+    session[:id] = User.from_omniauth(request.env['omniauth.auth']).id
     redirect_to '#/artists'
   end
 

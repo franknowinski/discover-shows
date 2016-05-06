@@ -1,15 +1,11 @@
 function ArtistsController(Artist, $filter, $cookies){
-  // items
-  // this.artists = items.data;
-  
   var ctrl = this;
   ctrl.artists = Artist.query();
-  ctrl.search = '';
-
+  ctrl.search;
+  
   ctrl.refilter = function(){
     ctrl.filteredList = $filter('filter')(ctrl.artists, ctrl.search);
   };
-
   ctrl.refilter();
 
   ctrl.view = true;
@@ -17,7 +13,6 @@ function ArtistsController(Artist, $filter, $cookies){
   ctrl.changeViewStatus = function(){
     ctrl.view = false;
   }
-
 }
 
 angular

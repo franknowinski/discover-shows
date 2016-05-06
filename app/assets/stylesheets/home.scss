@@ -15,18 +15,26 @@ body {
 }
 
 // Navbar
-
-#navbar {
-  width: 100%;
+.navbar-inverse {
   padding-top: 8px;
-  p, a {
-    margin-left: 85px;
-    font-size: 1.3em;
-    color: white;
+  li {
+    width: 25%;
+    text-align: center;
+    font-size: 1.4em;
+    text-align: center;
   }
-  a:hover {
-    color: rgb(0, 217, 90);
-  }
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: rgb(0, 217, 90);
+}
+
+.navbar-nav {
+  width: 100%;
 }
 
 // Page
