@@ -1,4 +1,4 @@
-function HomeController($cookies, $location, LoginService, User, $stateProvider){
+function HomeController($cookies, $location, LoginService, User){
   var ctrl = this;
 
   ctrl.user = User.get();
@@ -10,8 +10,6 @@ function HomeController($cookies, $location, LoginService, User, $stateProvider)
   };
 
   ctrl.view = true;
-
-  debugger;
 }
 
 angular

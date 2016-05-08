@@ -15,6 +15,7 @@
 
       <div class="col-sm-12" id="artist-scrollbar">
         <ul ng-repeat="artist in library.artists | filter:search | orderBy:sort:reverse">
+          <!-- <li class="artist-list-item"><a ng-click="home.view = false" ui-sref="home.artists.id({id: artist.id})">{{ artist.name }}</a></li> -->
           <li class="artist-list-item"><a ng-click="home.view = false" ui-sref="home.artists.id({id: artist.id})">{{ artist.name }}</a></li>
         </ul>
         <span ng-show="artists.filteredList.length == 0" id="artist-not-found">Artist not found</span>
@@ -25,6 +26,7 @@
       <p ng-if="home.view" id="pick-artists-header">
         Find your favorite artists nearby concerts!
       </p>
+      <!-- <p ng-if="home.view">Artist: {{ library.artists[0] }}</p> -->
       <ui-view></ui-view>
     </div>
   </div>

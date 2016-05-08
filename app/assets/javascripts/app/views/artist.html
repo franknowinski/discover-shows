@@ -16,10 +16,11 @@
 
   <!-- Artist's Upcoming Concerts -->
   <div class="col-sm-6" id="list-concerts">
-    <h3 ng-show="!artist.noUpcomingConcerts()" id="upcoming-concerts-header"> {{ artist.concerts.length }} Upcoming Concerts<hr></h3>
+    <h3 ng-show="artist.concerts.length > 0" id="upcoming-concerts-header"> {{ artist.concerts.length }} Upcoming Concerts<hr></h3>
 
-    <div ng-show="artist.noUpcomingConcerts()">
-      <p id="no-upcoming-concerts">{{ artist.artist.name}} has no upcoming concerts</p>
+    <!-- <div ng-show="artist.noUpcomingConcerts()"> -->
+    <div ng-show="artist.concerts.length === 0">
+      <p id="no-upcoming-concerts">{{ artist.artist.name }} has no upcoming concerts</p>
     </div>
 
     <div id="concerts-scrollbar">

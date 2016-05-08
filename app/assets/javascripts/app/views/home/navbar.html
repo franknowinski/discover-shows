@@ -1,7 +1,7 @@
 <div class="row">
   <nav class="navbar navbar-inverse container-fluid navbar-fixed-top">
     <ul class="nav navbar-nav">
-      <li><a ui-sref-active="active" ui-sref="home.artists">Top Artists<span class="sr-only">(current)</span></a></li>
+      <li><a ui-sref-active="active" ui-sref="home.artists" ng-click="home.view = true">Top Artists<span class="sr-only">(current)</span></a></li>
       <li><a ui-sref-active="active" ui-sref="home.upcoming_concerts">Upcoming Concerts</a></li>
       <li><a ui-sref-active="active" ui-sref="home.browse_concerts">Browse Concerts</a></li>
       <li><a ui-sref-active="active" ng-click="home.logoutUser();">Logout</a></li>
