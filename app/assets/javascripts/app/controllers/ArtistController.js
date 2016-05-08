@@ -1,11 +1,13 @@
 function ArtistController(Artist, $stateParams, ConcertService){
   var ctrl = this;
-  ctrl.artist = Artist.get({id: $stateParams.id});
+
+  Artist.get({id: $stateParams.id}, function(res){
+    ctrl.artist = res.artist;
+    ctrl.songs = res.artist.songs;
+    ctrl.concerts = res.artist.concerts;
+  });
 
   // ctrl.songs = ctrl.artist.artist.songs;
-
-  console.log(ctrl.artist)
-  console.log(ctrl.artist.artist)
 
   // this.artist = item.data;
   // this.songs = tracks.data.splice(0, 10);

@@ -5,22 +5,11 @@ function ArtistsController(Artist, $filter){
     ctrl.artists = res.artists;
   });
 
-  // ctrl.artists = Artist.query();
-
-  // ctrl.artists = ctrl.getArtists.artists;
-  // ctrl.search = '';
+  // ctrl.view = true;
   //
-  // ctrl.refilter = function(){
-  //   ctrl.filteredList = $filter('filter')(ctrl.artists.artists, ctrl.search);
+  // ctrl.changeViewStatus = function(){
+  //   ctrl.view = false;
   // };
-
-  // ctrl.refilter();
-
-  ctrl.view = true;
-
-  ctrl.changeViewStatus = function(){
-    ctrl.view = false;
-  };
 }
 
 angular

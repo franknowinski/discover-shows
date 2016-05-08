@@ -4,12 +4,12 @@ angular
     $stateProvider
       .state('login', {
         url: '/login',
-        templateUrl: 'app/views/login.html',
+        templateUrl: 'app/views/home/login.html',
         controller: 'LoginController as login'
       })
       .state('home', {
         url: '/',
-        templateUrl: 'app/views/home.html',
+        templateUrl: 'app/views/home/navbar.html',
         controller: 'HomeController as home'
       })
       .state('home.artists', {
@@ -21,17 +21,6 @@ angular
         url: '/:id',
         templateUrl: 'app/views/artist.html',
         controller: 'ArtistController as artist'
-        // resolve: {
-        //   item: function($stateParams, ArtistService){
-        //     return ArtistService.getArtist($stateParams.id)
-        //   },
-        //   tracks: function($stateParams, ArtistService){
-        //     return ArtistService.getSongs($stateParams.id)
-        //   },
-        //   events: function($stateParams, ConcertService){
-        //     return ConcertService.getConcerts($stateParams.id)
-        //   }
-        // }
       })
       .state('home.upcoming_concerts', {
         url: 'upcoming-concerts',
