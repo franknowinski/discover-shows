@@ -4,7 +4,9 @@
   <div id="artists-section" class="row">
     <div class="col-sm-3" id="list-user-artists">
       <div class="col-sm-7">
-        <input type="text" ng-model="artists.search" ng-change="artists.refilter()" class="form-control clearfix" placeholder="Search Artist" id="artist-search"><br>
+        <input type="text" ng-model="search" class="form-control clearfix" placeholder="Search Artist" id="artist-search"><br>
+
+        <!-- <input type="text" ng-model="search" ng-change="artists.refilter()" class="form-control clearfix" placeholder="Search Artist" id="artist-search"><br> -->
       </div>
       <div class="clearfix"></div>
 
@@ -13,17 +15,16 @@
         <a href="" ng-click="sort = ''; reverse = !reverse">Most listened to</a>
       </p>
 
-      <div class="col-sm-12" id="artist-scrollbar" ng-init="showView = true">
-        <ul>
-          <ul ng-repeat="artist in artists.filteredList | orderBy:sort:reverse">
-          <li class="artist-list-item"><a ng-click="artists.changeViewStatus()" ui-sref="home.artists.id({id: artist.id})">{{ artist.name }}</a></li>
+      <div class="col-sm-12" id="artist-scrollbar">
+        <ul ng-repeat="artist in library.artists | filter:search | orderBy:sort:reverse">
+          <li class="artist-list-item"><a ng-click="library.changeViewStatus()" ui-sref="home.artists.id({id: artist.id})">{{ artist.name }}</a></li>
         </ul>
         <span ng-show="artists.filteredList.length == 0" id="artist-not-found">Artist not found</span>
       </div>
     </div>
 
     <div class="col-sm-9">
-      <p ng-if="artists.view" id="pick-artists-header">
+      <p ng-if="library.view" id="pick-artists-header">
         Find your favorite artists nearby concerts!
       </p>
       <ui-view></ui-view>

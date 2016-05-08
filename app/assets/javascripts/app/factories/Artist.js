@@ -1,6 +1,6 @@
 function Artist($resource) {
   return $resource('/api/v1/artists/:id/', {artist_id: '@artist_id'}, {
-     query: { method: 'GET', isArray: true },
+     query: { method: 'GET' },
      get: { method: 'GET' }
   });
 };

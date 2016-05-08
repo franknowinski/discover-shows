@@ -1,18 +1,26 @@
-function ArtistsController(Artist, $filter, $cookies){
+function ArtistsController(Artist, $filter){
   var ctrl = this;
-  ctrl.artists = Artist.query();
-  ctrl.search;
-  
-  ctrl.refilter = function(){
-    ctrl.filteredList = $filter('filter')(ctrl.artists, ctrl.search);
-  };
-  ctrl.refilter();
+
+  Artist.query(function(res){
+    ctrl.artists = res.artists;
+  });
+
+  // ctrl.artists = Artist.query();
+
+  // ctrl.artists = ctrl.getArtists.artists;
+  // ctrl.search = '';
+  //
+  // ctrl.refilter = function(){
+  //   ctrl.filteredList = $filter('filter')(ctrl.artists.artists, ctrl.search);
+  // };
+
+  // ctrl.refilter();
 
   ctrl.view = true;
 
   ctrl.changeViewStatus = function(){
     ctrl.view = false;
-  }
+  };
 }
 
 angular

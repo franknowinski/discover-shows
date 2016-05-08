@@ -15,7 +15,7 @@ angular
       .state('home.artists', {
         url: 'artists',
         templateUrl: 'app/views/artists.html',
-        controller: 'ArtistsController as artists'
+        controller: 'ArtistsController as library'
       })
       .state('home.artists.id', {
         url: '/:id',
