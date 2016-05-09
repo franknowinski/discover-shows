@@ -8,17 +8,16 @@ Rails.application.routes.draw do
 
       resource :users, only: [:show]
 
-      post 'zipcode', to: 'user#zipcode'
-
-      resources :user, only: [:destroy] do
+      resources :users, only: [:destroy] do
         resources :upcoming_concerts, only: [:index, :create, :destroy]
         get 'all-concerts', to: 'concerts#show'
       end
 
-      resources :artists, only: [:index, :show] do
-        resources :songs, only: [:index]
-        resources :concerts, only: [:index]
-      end
+      resources :artists, only: [:index, :show]
+      # do
+      #   resources :songs, only: [:index]
+      #   resources :concerts, only: [:index]
+      # end
     end
   end
 end

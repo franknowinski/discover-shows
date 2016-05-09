@@ -1,11 +1,23 @@
-function UpcomingConcertsController($filter, ConcertService, User, Concert){
+function UpcomingConcertsController($filter, User, Restangular, ConcertService){
   var ctrl = this;
+  Restangular.setBaseUrl('/api/v1');
 
-  ctrl.user = User.get();
+  User.get().$promise.then(function(res){
+    Restangular.one('users', res.id).one('upcoming_concerts').get()
+      .then(function(res){
+        ctrl.upcomingConcerts = res.upcoming_concerts;
+      });
+  });
 
-  Concert.query({'user_id': ctrl.user.id}, function(res){
-    debugger;
-  })
+  // User.get(function(res){
+  //   ctrl.user = res;
+  //   Restangular.one('users', ctrl.user.id)
+  //   .one('upcoming_concerts')
+  //   .get()
+  //   .then(function(res){
+  //     ctrl.upcomingConcerts = res.upcoming_concerts;
+  //   });
+  // });
 
   //
   // ctrl.upcomingConcerts = items.data;
@@ -19,13 +31,6 @@ function UpcomingConcertsController($filter, ConcertService, User, Concert){
   //     })
   // };
   //
-  // ctrl.search = '';
-  //
-  // ctrl.refilter = function(){
-  //   ctrl.filteredList = $filter('filter')(ctrl.upcomingConcerts, ctrl.search);
-  // };
-  //
-  // ctrl.refilter();
 }
 
 angular

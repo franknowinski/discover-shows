@@ -14,30 +14,7 @@ body {
   }
 }
 
-// Navbar
-.navbar-inverse {
-  padding-top: 8px;
-  li {
-    width: 25%;
-    text-align: center;
-    font-size: 1.4em;
-    text-align: center;
-  }
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  color: white;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover {
-  color: rgb(0, 217, 90);
-}
-
-.navbar-nav {
-  width: 100%;
-}
-
-// Page
+// Page container
 
 #page {
   margin-top: 110px;

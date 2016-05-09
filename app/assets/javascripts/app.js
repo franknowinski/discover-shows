@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'ngCookies'])
+  .module('app', ['ui.router', 'templates', 'ngMessages', 'ngResource', 'ngCookies', 'restangular'])
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('login', {

@@ -1,4 +1,5 @@
-function ConcertService($http, $cookies){
+function ConcertService($http, $cookies, Restangular){
+
   this.getConcerts = function(id){
     return $http.get('/artists/' + id + '/concerts');
   };

@@ -1,9 +1,10 @@
-function ArtistsController(Artist, $filter){
+function ArtistsController(Artist, Restangular){
   var ctrl = this;
 
-  Artist.query(function(res){
-    ctrl.artists = res.artists;
-  });
+  // Restangular.
+  // Artist.query(function(res){
+  //   ctrl.artists = res.artists;
+  // });
 
   // ctrl.view = true;
   //
