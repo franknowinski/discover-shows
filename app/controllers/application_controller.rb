@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def spotify
     session[:id] = User.from_omniauth(request.env['omniauth.auth']).id
-    redirect_to '#/artists'
+    redirect_to '#/artists/1'
   end
 
   def logged_in?
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   def set_csrf_cookie_for_ng
     cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
   end
-  
+
   protected
 
   def verified_request?

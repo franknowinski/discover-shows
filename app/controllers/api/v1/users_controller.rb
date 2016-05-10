@@ -7,10 +7,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def destroy
-    # binding.pry
     session.clear
     head :no_content
-    # redirect_to '#/login'
-    # render nothing: true
   end
 end

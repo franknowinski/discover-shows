@@ -1,15 +1,14 @@
-function ArtistsController(Artist, Restangular, $cookies, ArtistService){
+function ArtistsController($filter, $cookies, ArtistService, Restangular){
   var ctrl = this;
 
-  ArtistService.getArtists.then(function(res){
-    ctrl.artists = res.artists;
-  });
-
-  ctrl.view = true;
-
-  ctrl.changeViewStatus = function(){
-    ctrl.view = false;
+  ctrl.refilter = function(){
+    ArtistService.getArtists.then(function(res){
+      ctrl.filteredList = $filter('filter')(res.artists, ctrl.search);
+    });
   };
+
+  ctrl.search;
+  ctrl.refilter();
 };
 
 angular

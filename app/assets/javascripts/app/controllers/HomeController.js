@@ -1,6 +1,6 @@
 function HomeController($cookies, LoginService){
   var ctrl = this;
-  
+
   LoginService.login();
 
   ctrl.logoutUser = function() {
