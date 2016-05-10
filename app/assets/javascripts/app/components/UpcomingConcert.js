@@ -1,17 +1,12 @@
 var UpcomingConcert = {
   bindings: {
-    name: '='
+    concert: '='
   },
   templateUrl: 'app/views/upcoming_concert.html',
-  controller: function(ArtistService, ConcertService){
+  controller: function(ConcertService){
     var ctrl = this;
-    ctrl.concert = this.name;
-    ctrl.artist = '';
-
-    ctrl.findArtist = ArtistService.getArtist(this.name.artist_id)
-      .then(function(res){
-        ctrl.artist = res.data;
-      })
+    ctrl.artist = this.concert.artist;
+    ctrl.concert = this.concert.concert;
   },
   controllerAs: 'artist'
 }

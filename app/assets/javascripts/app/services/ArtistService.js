@@ -1,15 +1,11 @@
-function ArtistService($http, Restangular, $cookies){
+function ArtistService($http, Restangular){
   Restangular.setBaseUrl('/api/v1');
 
   this.getArtists = Restangular.one('artists').get();
 
-  // this.getArtist = function(id){
-  //   return $http.get('/artists/' + id);
-  // };
-  //
-  // this.getSongs = function(id){
-  //   return $http.get('/artists/' + id + '/songs');
-  // };
+  this.getArtist = function(id){
+    return Restangular.one('artists', id).get();
+  }
 }
 
 angular

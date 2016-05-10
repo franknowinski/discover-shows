@@ -6,6 +6,7 @@
   <div class="col-sm-6 concert-details">
     <p class="concert-artist-name">{{ artist.artist.name }}</p>
     <p class="concert-title">{{ artist.concert.title }}</p>
+
     <p>{{ artist.concert.name }}</p>
     <p>{{ artist.concert.city }}, {{ artist.concert.state }} </p>
   </div>
@@ -15,5 +16,4 @@
     <p>Ticket status: {{ artist.concert.status | uppercase }}</p>
     <p><a href="{{ artist.concert.ticket_url }}" target="_blank">Buy Tickets</a></p><br><br>
   </div>
-
 </div>

@@ -18,14 +18,13 @@
   <div class="col-sm-6" id="list-concerts">
     <h3 ng-show="artist.concerts.length > 0" id="upcoming-concerts-header"> {{ artist.concerts.length }} Upcoming Concerts<hr></h3>
 
-    <!-- <div ng-show="artist.noUpcomingConcerts()"> -->
     <div ng-show="artist.concerts.length === 0">
       <p id="no-upcoming-concerts">{{ artist.artist.name }} has no upcoming concerts</p>
     </div>
 
     <div id="concerts-scrollbar">
       <ul ng-repeat="concert in artist.concerts" class="concert-box">
-        <concert name="concert"></concert>
+        <concert concert="concert"></concert>
       </ul>
     </div>
   </div>

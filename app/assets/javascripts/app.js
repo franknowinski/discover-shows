@@ -25,11 +25,6 @@ angular
         url: 'upcoming-concerts',
         templateUrl: 'app/views/upcoming_concerts.html',
         controller: 'UpcomingConcertsController as events'
-        // resolve: {
-        //   items: function($stateParams, ConcertService){
-        //     return ConcertService.getUpcomingConcerts($stateParams.id);
-        //   }
-        // }
       })
       .state('home.browse_concerts', {
         url: 'browse-concerts',
