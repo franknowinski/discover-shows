@@ -1,13 +1,11 @@
-function HomeController($cookies, $location, LoginService, User, Restangular){
+function HomeController($cookies, LoginService){
   var ctrl = this;
+  
+  LoginService.login();
 
-  ctrl.logoutUser = function(){
-    LoginService.signOutUser($cookies.get('id'));
-
-    $location.path('/login')
+  ctrl.logoutUser = function() {
+    LoginService.logout($cookies.get('id'));
   };
-
-  ctrl.view = true;
 }
 
 angular

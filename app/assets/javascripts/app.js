@@ -4,8 +4,7 @@ angular
     $stateProvider
       .state('login', {
         url: '/login',
-        templateUrl: 'app/views/home/login.html',
-        controller: 'LoginController as login'
+        templateUrl: 'app/views/home/login.html'
       })
       .state('home', {
         url: '/',
@@ -42,5 +41,5 @@ angular
           }
         }
       });
-    $urlRouterProvider.otherwise('/login')
+    $urlRouterProvider.otherwise('login')
   });

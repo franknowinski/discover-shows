@@ -1,5 +1,5 @@
 class Api::V1::ConcertsController < ApplicationController
-  before_action :logged_in?, only: [:show]
+  # before_action :logged_in?, only: [:show]
   before_action :set_concerts, only: [:index]
 
   def index
@@ -7,7 +7,7 @@ class Api::V1::ConcertsController < ApplicationController
   end
 
   def show
-    render json: @current_user.artists.map(&:concerts).flatten
+    render json: current_user.artists.map(&:concerts).flatten
   end
 
   private

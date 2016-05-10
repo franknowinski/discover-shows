@@ -13,6 +13,6 @@ class User < ActiveRecord::Base
   end
 
   def top_artists
-    JSON.parse(`curl -X GET "https://api.spotify.com/v1/me/top/artists?limit=30" -H "Accept: application/json" -H "Authorization: Bearer #{token}"`)
+    JSON.parse(`curl -X GET "https://api.spotify.com/v1/me/top/artists?limit=10" -H "Accept: application/json" -H "Authorization: Bearer #{token}"`)
   end
 end

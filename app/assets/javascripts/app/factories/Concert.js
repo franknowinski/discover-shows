@@ -8,6 +8,3 @@ function Concert($resource) {
 angular
   .module('app')
   .factory('Concert', Concert);
-
-
-// $http.get('/user/' + user_id + '/upcoming_concerts');

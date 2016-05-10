@@ -1,5 +1,5 @@
 class Api::V1::UpcomingConcertsController < ApplicationController
-  before_action :set_user, only: [:index, :create, :destroy]
+  # before_action :set_user, only: [:index, :create, :destroy]
   before_action :set_concert, only: [:create]
 
   def index
@@ -19,9 +19,9 @@ class Api::V1::UpcomingConcertsController < ApplicationController
 
   private
 
-  def set_user
-    @current_user = User.find(params[:user_id]);
-  end
+  # def set_user
+  #   @current_user = User.find(params[:user_id]);
+  # end
 
   def set_concert
     @concert = Concert.find(params[:upcoming_concert][:concert_id])

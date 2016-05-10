@@ -1,17 +1,16 @@
-function ArtistsController(Artist, Restangular){
+function ArtistsController(Artist, Restangular, $cookies, ArtistService){
   var ctrl = this;
 
-  // Restangular.
-  // Artist.query(function(res){
-  //   ctrl.artists = res.artists;
-  // });
+  ArtistService.getArtists.then(function(res){
+    ctrl.artists = res.artists;
+  });
 
-  // ctrl.view = true;
-  //
-  // ctrl.changeViewStatus = function(){
-  //   ctrl.view = false;
-  // };
-}
+  ctrl.view = true;
+
+  ctrl.changeViewStatus = function(){
+    ctrl.view = false;
+  };
+};
 
 angular
   .module('app')
