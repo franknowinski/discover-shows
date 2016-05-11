@@ -1,11 +1,8 @@
-function ArtistController($stateParams, ArtistService){
+function ArtistController(library){
   var ctrl = this;
-
-  ArtistService.getArtist($stateParams.id).then(function(res){
-    ctrl.artist = res.artist;
-    ctrl.songs = res.artist.songs;
-    ctrl.concerts = res.artist.concerts;
-  });
+  ctrl.artist = library.artist;
+  ctrl.songs = library.artist.songs;
+  ctrl.concerts = library.artist.concerts;
 };
 
 angular

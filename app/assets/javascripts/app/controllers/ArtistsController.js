@@ -1,10 +1,8 @@
-function ArtistsController($filter, $cookies, ArtistService, Restangular){
+function ArtistsController(library, $filter, Restangular){
   var ctrl = this;
 
   ctrl.refilter = function(){
-    ArtistService.getArtists.then(function(res){
-      ctrl.filteredList = $filter('filter')(res.artists, ctrl.search);
-    });
+    ctrl.filteredList = $filter('filter')(library.artists, ctrl.search);
   };
 
   ctrl.search;

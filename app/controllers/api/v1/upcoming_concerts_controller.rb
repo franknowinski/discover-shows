@@ -13,9 +13,8 @@ class Api::V1::UpcomingConcertsController < ApplicationController
   end
 
   def destroy
-    # @current_user.upcoming_concerts.destroy(params[:id])
-    render json: @current_user.upcoming_concerts.destroy(params[:id])
-    # head :no_content
+    @current_user.upcoming_concerts.destroy(params[:id])
+    head :no_content
   end
 
   private

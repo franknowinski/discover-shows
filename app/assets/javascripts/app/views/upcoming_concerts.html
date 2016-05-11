@@ -17,12 +17,10 @@
     <button class="btn btn-success remove-concert-button" ng-click="events.removeConcert($index)">Remove Show</button>
   </ul>
 
-  <span ng-show="events.upcomingConcerts.length != 0">
+  <span ng-if="events.upcomingConcerts.length != 0">
     <p ng-show="events.filteredList.length == 0" id="concert-not-found">Concert not found</p>
   </span>
 
-  <span ng-show="events.upcomingConcerts.length == 0">
-    <p id="concert-not-found">You have no upcoming concerts</p>
-  </span>
+  <p ng-show="events.upcomingConcerts.length == 0" id="concert-not-found">You have no upcoming concerts</p>
 
 </div>
