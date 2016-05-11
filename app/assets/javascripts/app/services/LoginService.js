@@ -3,9 +3,9 @@ function LoginService($cookies, $location, Restangular){
 
   this.login = function(){
     Restangular.one('users').get().then(function(res){
-      $cookies.put('id', res.id);
-      $cookies.put('name', res.name);
-      $cookies.put('email', res.email);
+      $cookies.put('id', res.user.id);
+      $cookies.put('name', res.user.id);
+      $cookies.put('email', res.user.id);
     });
   };
 

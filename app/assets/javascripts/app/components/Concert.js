@@ -3,7 +3,7 @@ var Concert = {
     concert: '='
   },
   templateUrl: 'app/views/concert.html',
-  controller: function(ConcertService){
+  controller: function($cookies, ConcertService){
     var ctrl = this;
 
     ctrl.addConcert = function(){
@@ -11,10 +11,8 @@ var Concert = {
       ctrl.attending = true;
     };
 
-    ConcertService.getUpcomingConcerts.then(function(res){
-      ctrl.attending = res.upcoming_concerts.some(function(concert){
-        return ctrl.concert.id == concert.concert.id
-      });
+    ctrl.attending = this.concert.users.some(function(user){
+      return user.id == $cookies.get('id');
     });
   },
   controllerAs: 'artist'
