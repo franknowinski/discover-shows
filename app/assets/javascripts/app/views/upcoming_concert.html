@@ -1,19 +1,19 @@
 <div class="row upcoming-concert-tab">
   <div class="col-sm-3">
-    <img src="{{ artist.artist.image_url }}" alt="artist-image" id="artist-image" class="img-rounded">
+    <img src="{{ artist.show.artist.image_url }}" alt="artist-image" id="artist-image" class="img-rounded">
   </div>
 
   <div class="col-sm-6 concert-details">
-    <p class="concert-artist-name">{{ artist.artist.name }}</p>
-    <p class="concert-title">{{ artist.concert.title }}</p>
+    <p class="concert-artist-name">{{ artist.show.artist.name }}</p>
+    <p class="concert-title">{{ artist.show.concert.title }}</p>
 
-    <p>{{ artist.concert.name }}</p>
-    <p>{{ artist.concert.city }}, {{ artist.concert.state }} </p>
+    <p>{{ artist.show.concert.name }}</p>
+    <p>{{ artist.show.concert.city }}, {{ artist.show.concert.state }} </p>
   </div>
 
   <div class="col-sm-3 concert-details">
-    <p>{{ artist.concert.date | date:'medium' }}</p>
-    <p>Ticket status: {{ artist.concert.status | uppercase }}</p>
-    <p><a href="{{ artist.concert.ticket_url }}" target="_blank">Buy Tickets</a></p><br><br>
+    <p>{{ artist.show.concert.date | date:'medium' }}</p>
+    <p>Ticket status: {{ artist.show.concert.status | uppercase }}</p>
+    <p><a href="{{ artist.show.concert.ticket_url }}" target="_blank">Buy Tickets</a></p><br><br>
   </div>
 </div>

@@ -3,10 +3,8 @@ var UpcomingConcert = {
     concert: '='
   },
   templateUrl: 'app/views/upcoming_concert.html',
-  controller: function(ConcertService){
-    var ctrl = this;
-    ctrl.artist = this.concert.artist;
-    ctrl.concert = this.concert.concert;
+  controller: function(){
+    this.show = this.concert;
   },
   controllerAs: 'artist'
 }

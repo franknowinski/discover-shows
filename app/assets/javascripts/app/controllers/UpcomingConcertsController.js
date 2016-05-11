@@ -1,34 +1,22 @@
-function UpcomingConcertsController($filter, ConcertService){
+function UpcomingConcertsController(concerts, $scope, $filter, ConcertService){
   var ctrl = this;
+  ctrl.upcomingConcerts = concerts.upcoming_concerts;
 
   ctrl.refilter = function(){
-    ConcertService.getUpcomingConcerts.then(function(res){
-      ctrl.filteredList = $filter('filter')(res.upcoming_concerts, ctrl.search);
-    });
+    ctrl.filteredList = $filter('filter')(ctrl.upcomingConcerts, ctrl.search);
   };
 
   ctrl.search;
   ctrl.refilter();
 
   ctrl.removeConcert = function(index){
-    var concert = this.filteredList[index];
+    var concert = ctrl.filteredList[index];
     ConcertService.removeUpcomingConcert(concert.id)
-      .then(function(){
+      .then(function(res){
         ctrl.filteredList.splice(index, 1);
+        ctrl.refilter();
       });
-      ctrl.refilter();
   };
-
-  //  //
-  // ctrl.removeConcert = function(index){
-  //   var concert = ctrl.upcomingConcerts[index];
-  //   ConcertService.removeUpcomingConcert(concert.id)
-  //     .then(function(res){
-  //       ctrl.upcomingConcerts.splice(index,1);
-  //       ctrl.refilter();
-  //     })
-  // };
-  //
 }
 
 angular
