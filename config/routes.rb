@@ -9,7 +9,7 @@ Rails.application.routes.draw do
         resources :upcoming_concerts, only: [:index, :create, :destroy]
         resources :concerts, only: [:index]
       end
-      resources :artists, only: [:index, :show]
+      resources :artists, only: [:index, :show, :update]
       resource :users, only: [:show]
     end
   end

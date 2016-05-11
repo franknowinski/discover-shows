@@ -128,7 +128,7 @@
 }
 
 #list-top-tracks {
-  height: 215px;
+  height: 201px;
   overflow-y: auto;
   li {
     list-style-type: none;
@@ -141,4 +141,45 @@
 
 #pick-artists-header {
   font-size: 30px;
+}
+
+// Popularity Form
+
+.popularity-rating {
+  margin-left: -28px;
+}
+
+.edit-popularity-link {
+  font-size: .8em;
+  margin-right: 15px;
+  margin-top: 7px;
+  float: right;
+}
+
+.popularity-button {
+  font-size: .8em;
+  margin-right: 15px;
+  float: right;
+}
+
+#edit-popularity-input {
+  width: 44px;
+  margin-left: -10px;
+}
+
+.populartiy-input-row {
+  margin-top: -3px;
+}
+
+.popularity-input-errors {
+  color: red;
+  font-size: .8em;
+  margin: -10px 0px -4px -120px;
+}
+
+// Turn off number input spinners
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

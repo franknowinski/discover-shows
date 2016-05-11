@@ -1,5 +1,6 @@
-function HomeController($cookies, LoginService){
+function HomeController(library, $cookies, LoginService){
   var ctrl = this;
+  ctrl.topArtist = library.artists[0];
 
   LoginService.login();
 

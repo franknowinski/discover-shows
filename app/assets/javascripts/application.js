@@ -5,4 +5,5 @@
 //= require angular-rails-templates
 //= require angular-resource
 //= require angular-cookies
+//= require angular-messages
 //= require_tree .

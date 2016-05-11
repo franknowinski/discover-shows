@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router', 'templates', 'ngResource', 'ngCookies', 'restangular'])
+  .module('app', ['ui.router', 'templates', 'ngResource', 'ngCookies', 'ngMessages', 'restangular'])
   .config(function($stateProvider, $urlRouterProvider, RestangularProvider){
     RestangularProvider.setBaseUrl('/api/v1');
 
@@ -11,7 +11,12 @@ angular
       .state('home', {
         url: '/',
         templateUrl: 'app/views/home/navbar.html',
-        controller: 'HomeController as home'
+        controller: 'HomeController as home',
+        resolve: {
+          library: function(Restangular){
+            return Restangular.one('artists').get();
+          }
+        }
       })
       .state('home.artists', {
         url: 'artists',

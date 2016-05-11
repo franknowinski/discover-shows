@@ -5,7 +5,39 @@
       <img src="{{ artist.artist.image_url }}" class="img-rounded" id="artist-image" alt="artist-image">
       <p class="col-sm-6" id="artist-name">{{ artist.artist.name }}</p>
     </div>
-    <p id="artist-popularity">Popularity: {{ artist.artist.popularity }}</p>
+
+    <div class="row" id="artist-popularity">
+      <p class="col-sm-3">Popularity: </p>
+
+      <p class="col-sm-1 popularity-rating" ng-hide="artist.showPopularityForm">{{ artist.artist.popularity }}</p>
+
+        <form name="form" class="col-sm-9" ng-submit="artist.editPopularity()" ng-show="artist.showPopularityForm">
+          <div class="form-group row populartiy-input-row">
+            <input
+              name="popularity"
+              type="number"
+              ng-model="artist.artist.popularity"
+              required="required"
+              min="1"
+              max="101"
+              class="form-control col-sm-2"
+              id="edit-popularity-input"
+              placeholder="{{ artist.artist.popularity }}"
+              >
+
+            <input type="submit" class="btn btn-primary col-sm-3 popularity-button" placeholder="Update">
+          </div>
+
+          <div ng-messages="form.popularity.$error" ng-if="form.popularity.$touched" class="popularity-input-errors">
+            <div ng-message="required" class="error-message">You must enter a new popularity rating</div>
+            <div ng-message="min" class="error-message">Rating must be greater than 0.</div>
+            <div ng-message="max" class="error-message">Rating cannot exceed 100.</div>
+          </div>
+        </form>
+
+      <a href="" ng-click="artist.showPopularityForm = true" ng-hide="artist.showPopularityForm" class="edit-popularity-link">Edit</a>
+    </div>
+
     <p id="top-tracks-header">Top 10 Tracks: </p>
     <div id="list-top-tracks">
       <ul ng-repeat="song in artist.songs">

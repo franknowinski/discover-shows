@@ -57,6 +57,7 @@ GEM
     choice (0.2.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.1)
+    curb (0.9.3)
     debug_inspector (0.0.2)
     domain_name (0.5.20160310)
       unf (>= 0.0.5, < 1.0.0)
@@ -199,6 +200,7 @@ DEPENDENCIES
   angular-rails-templates
   awesome_print
   bootstrap-sass (~> 3.3.6)
+  curb
   dotenv-rails
   jbuilder (~> 2.0)
   pry-byebug
