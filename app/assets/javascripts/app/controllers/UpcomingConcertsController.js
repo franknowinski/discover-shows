@@ -1,4 +1,4 @@
-function UpcomingConcertsController(concerts, $scope, $filter, ConcertService){
+function UpcomingConcertsController(concerts, $filter, ConcertService){
   var ctrl = this;
   ctrl.upcomingConcerts = concerts.upcoming_concerts;
 

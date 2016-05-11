@@ -1,6 +1,8 @@
 angular
   .module('app', ['ui.router', 'templates', 'ngResource', 'ngCookies', 'restangular'])
   .config(function($stateProvider, $urlRouterProvider, RestangularProvider){
+    RestangularProvider.setBaseUrl('/api/v1');
+
     $stateProvider
       .state('login', {
         url: '/login',
@@ -17,7 +19,6 @@ angular
         controller: 'ArtistsController as library',
         resolve: {
           library: function(Restangular){
-            Restangular.setBaseUrl('/api/v1');
             return Restangular.one('artists').get();
           }
         }
@@ -28,7 +29,6 @@ angular
         controller: 'ArtistController as artist',
         resolve: {
           library: function($stateParams, Restangular){
-            Restangular.setBaseUrl('/api/v1');
             return Restangular.one('artists', $stateParams.id).get();
           }
         }
@@ -39,7 +39,6 @@ angular
         controller: 'UpcomingConcertsController as events',
         resolve: {
           concerts: function($cookies, Restangular){
-            Restangular.setBaseUrl('/api/v1');
             return Restangular.one('users', $cookies.get('id'))
                     .one('upcoming_concerts').get();
           }
@@ -50,10 +49,12 @@ angular
         templateUrl: 'app/views/browse_concerts.html',
         controller: 'BrowseConcertsController as events',
         resolve: {
-          items: function(ConcertService){
-            return ConcertService.getAllConcerts();
+          artists: function($cookies, Restangular){
+            return Restangular.one('users', $cookies.get('id'))
+                    .one('concerts').get();
           }
         }
       });
-    $urlRouterProvider.otherwise('login')
+
+    $urlRouterProvider.otherwise('login');
   });

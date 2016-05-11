@@ -1,6 +1,6 @@
 class Api::V1::ArtistsController < ApplicationController
   before_action :logged_in?, only: [:index]
-  before_action :set_artist, only: [:show, :songs]
+  before_action :set_artist, only: [:show]
 
   def index
     render json: @current_user.artists

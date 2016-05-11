@@ -5,7 +5,9 @@
     <p>{{ artist.concert.name }}</p>
     <p>{{ artist.concert.city }}, {{ artist.concert.state }} </p>
     <p>Ticket status: {{ artist.concert.status | uppercase }}</p>
-    <p><a href="{{ artist.concert.ticket_url }}" target="_blank">Buy Tickets</a></p>
+    <p ng-hide="artist.concert.status == 'unavailable'">
+      <a href="{{ artist.concert.ticket_url }}" target="_blank">Buy Tickets</a>
+    </p>
   </li>
   <button ng-hide="artist.attending" class="btn btn-success add-concert-button" ng-click="artist.addConcert()">Add to Upcoming Concerts</button>
   <p ng-show="artist.attending" class="attending-concert">You're attending this concert!</p>

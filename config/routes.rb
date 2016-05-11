@@ -7,16 +7,10 @@ Rails.application.routes.draw do
 
       resources :users, only: [:destroy] do
         resources :upcoming_concerts, only: [:index, :create, :destroy]
-        get 'all-concerts', to: 'concerts#show'
+        resources :concerts, only: [:index]
       end
-
       resources :artists, only: [:index, :show]
       resource :users, only: [:show]
-      get 'upcoming_concerts/create'
-      # do
-      #   resources :songs, only: [:index]
-      #   resources :concerts, only: [:index]
-      # end
     end
   end
 end

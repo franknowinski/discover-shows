@@ -4,6 +4,7 @@ function ArtistsController(library, $filter, Restangular){
   ctrl.refilter = function(){
     ctrl.filteredList = $filter('filter')(library.artists, ctrl.search);
   };
+  
   ctrl.search;
   ctrl.refilter();
 };

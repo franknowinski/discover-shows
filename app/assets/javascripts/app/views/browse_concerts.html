@@ -12,8 +12,9 @@
     </div>
   </div>
 
-  <ul ng-repeat="concert in events.filteredList | filter:search | orderBy:sort:reverse">
-    <upcoming-concert name="concert"></upcoming-concert>
+  <ul ng-repeat="concert in events.filteredList | orderBy:sort:reverse">
+    <browse-concert concert="concert"></browse-concert>
   </ul>
+
   <span ng-show="events.filteredList.length == 0" id="concert-not-found">Concert not found</span>
 </div>
