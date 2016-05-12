@@ -50,9 +50,9 @@
 
   <!-- Artist's Upcoming Concerts -->
   <div class="col-sm-6" id="list-concerts">
-    <h3 ng-show="artist.concerts.length > 0" id="upcoming-concerts-header"> {{ artist.concerts.length }} Upcoming Concerts<hr></h3>
+    <h3 ng-show="artist.hasConcerts" id="upcoming-concerts-header"> {{ artist.concerts.length }} Upcoming Concert<span ng-show="artist.concerts.length > 1">s</span><hr></h3>
 
-    <div ng-show="artist.concerts.length === 0">
+    <div ng-hide="artist.hasConcerts">
       <p id="no-upcoming-concerts">{{ artist.artist.name }} has no upcoming concerts</p>
     </div>
 

@@ -43,9 +43,8 @@ GEM
       sprockets (~> 3.0)
       tilt
     arel (6.0.3)
-    autoprefixer-rails (6.3.3)
+    autoprefixer-rails (6.3.6)
       execjs
-      json
     awesome_print (1.6.1)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)

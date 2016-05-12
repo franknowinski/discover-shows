@@ -6,12 +6,51 @@ body {
 
 // Login
 
-#spotify-login {
+#spotify-login-container {
   text-align: center;
-  margin-top: 250px;
-  a {
-    color: rgb(34, 191, 84);
-  }
+  margin-top: 22%;
+}
+
+a.spotify-login {
+  background-color: #2ebd59;
+  color: white;
+  padding: 5px;
+  margin: 20px 10px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 500px;
+  padding: 11px 47px 9px;
+  letter-spacing: 1.2px;
+  min-width: 130px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.spotify-login:hover {
+  background-color: #1ed760;
+}
+
+.loading-message {
+  background-color: #2ebd59;
+  color: white;
+  padding: 5px;
+  margin: 20px 10px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 500px;
+  padding: 11px 47px 9px;
+  letter-spacing: 1.2px;
+  min-width: 130px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid transparent;
 }
 
 // Page container

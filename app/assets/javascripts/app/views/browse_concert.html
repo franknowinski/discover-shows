@@ -18,29 +18,14 @@
     <p><a href="{{ artist.concert.ticket_url }}" target="_blank">Buy Tickets</a></p><br><br>
   </div>
 
-  <button type="button" class="btn btn-info" aria-label="Left Align" ng-show="artist.users.length > 0" data-toggle="modal" data-target="#usersAttending">
+  <button
+    type="button"
+    class="btn btn-info"
+    aria-label="Left Align"
+    data-toggle="modal"
+    data-target="#usersAttending">
+
     <span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span>
     Users Attending
   </button>
-
-  <div id="usersAttending" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Users attending {{artist.artist}}'s concert at {{artist.concert.name}}</h4>
-        </div>
-        <div class="modal-body" ng-repeat="user in artist.users">
-          <p>{{user}}</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
 </div>

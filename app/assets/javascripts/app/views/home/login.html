@@ -1,3 +1,4 @@
-<h3 class="lead" id="spotify-login">
-  <a href="/auth/spotify" ng-click="login.spotifyLogin">Sign in to Spotify</a>
+<h3 class="lead" id="spotify-login-container">
+  <a href="/auth/spotify" class="spotify-login" ng-click="loading = true" ng-hide="loading">Sign in to Spotify</a>
+  <p class="loading-message" ng-show="loading">Loading your most listened to artists...</p>
 </h3>
