@@ -25,7 +25,7 @@
               placeholder="{{ artist.artist.popularity }}"
               >
 
-            <input type="submit" class="btn btn-primary col-sm-3 popularity-button" placeholder="Update">
+            <button type="submit" class="btn btn-primary col-sm-3 popularity-button">Update</button>
           </div>
 
           <div ng-messages="form.popularity.$error" ng-if="form.popularity.$touched" class="popularity-input-errors">
@@ -35,7 +35,9 @@
           </div>
         </form>
 
-      <a href="" ng-click="artist.showPopularityForm = true" ng-hide="artist.showPopularityForm" class="edit-popularity-link">Edit</a>
+      <button type="button" data-toggle="tooltip" data-placement="top" title="Edit" ng-click="artist.showPopularityForm = true" ng-hide="artist.showPopularityForm" class="btn btn-primary edit-popularity-link">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </button>
     </div>
 
     <p id="top-tracks-header">Top 10 Tracks: </p>
@@ -61,3 +63,9 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>

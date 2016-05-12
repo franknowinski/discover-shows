@@ -150,10 +150,13 @@
 }
 
 .edit-popularity-link {
-  font-size: .8em;
+  font-size: .7em;
   margin-right: 15px;
-  margin-top: 7px;
+  margin-top: -5px;
   float: right;
+  span {
+    font-size: .9em;
+  }
 }
 
 .popularity-button {
