@@ -1,12 +1,15 @@
 <div>
   <li class="list-concert">
     <p>{{ artist.concert.title }}</p>
-    <p>Date: {{ artist.concert.date | date:'medium' }}</p>
-    <p>{{ artist.concert.name }}</p>
-    <p>{{ artist.concert.city }}, {{ artist.concert.state }} </p>
-    <p>Ticket status: {{ artist.concert.status | uppercase }}</p>
-    <p ng-hide="artist.concert.status == 'unavailable'">
-      <a href="{{ artist.concert.ticket_url }}" target="_blank">Buy Tickets</a>
+    <p>{{ artist.concert.date | date:'medium' }}</p>
+    <address>
+      {{ artist.concert.name }}<br>
+      {{ artist.concert.city }}, {{ artist.concert.state }}
+    </address>
+    <p ng-hide="artist.concert.status == 'unavailable'">Ticket status:
+      <a href="{{ artist.concert.ticket_url }}" target="_blank">
+        {{ artist.concert.status | uppercase }}
+      </a>
     </p>
   </li>
   <button ng-hide="artist.attending" class="btn btn-success add-concert-button" ng-click="artist.addConcert()">Add to Upcoming Concerts</button>

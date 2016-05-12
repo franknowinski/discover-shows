@@ -6,8 +6,10 @@
     <p class="concert-artist-name">{{ artist.show.artist.name }}</p>
     <p class="concert-title">{{ artist.show.concert.title }}</p>
 
-    <p>{{ artist.show.concert.name }}</p>
-    <p>{{ artist.show.concert.city }}, {{ artist.show.concert.state }} </p>
+    <address>
+      {{ artist.show.concert.name }}<br>
+      {{ artist.show.concert.city }}, {{ artist.show.concert.state }}
+    </address>
   </div>
 
   <div class="col-sm-3 concert-details">
