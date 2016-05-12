@@ -11,9 +11,9 @@ var BrowseConcert = {
         ctrl.artist = res.artist;
       });
 
-    // ctrl.users = this.concert.users.map(function(user){
-    //   return user.name || user.email;
-    // });
+    ctrl.users = this.concert.users.map(function(user){
+      return user.name || user.email;
+    });
   },
   controllerAs: 'artist'
 }

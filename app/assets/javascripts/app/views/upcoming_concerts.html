@@ -14,7 +14,11 @@
 
   <ul ng-repeat="concert in events.filteredList | orderBy:sort:reverse">
     <upcoming-concert concert="concert"></upcoming-concert>
-    <button class="btn btn-success remove-concert-button" ng-click="events.removeConcert($index)">Remove Show</button>
+
+    <button class="btn btn-danger remove-concert-button" ng-click="events.removeConcert($index)" data-toggle="tooltip" data-placement="top" title="Remove Concert">
+       <span class="glyphicon glyphicon-remove"></span>
+    </button>
+    <script>$(document).ready(function(){ $('[data-toggle="tooltip"]').tooltip();});</script>
   </ul>
 
   <span ng-if="events.upcomingConcerts.length != 0">

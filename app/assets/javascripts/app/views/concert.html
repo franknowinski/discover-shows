@@ -12,6 +12,8 @@
       </a>
     </p>
   </li>
-  <button ng-hide="artist.attending" class="btn btn-success add-concert-button" ng-click="artist.addConcert()">Add to Upcoming Concerts</button>
-  <p ng-show="artist.attending" class="attending-concert">You're attending this concert!</p>
+  <div class="add-concert-container">
+    <button ng-hide="artist.attending" class="btn add-concert-button" ng-click="artist.addConcert()">Add to Upcoming Concerts</button>
+    <p ng-show="artist.attending" class="attending-concert">You're attending this concert!</p>
+  </div>
 </div>
