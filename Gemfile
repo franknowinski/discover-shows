@@ -13,8 +13,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rails-erd'
 gem 'active_model_serializers'
 gem 'curb'
-gem 'rails_12factor', group: :production
-gem 'pg'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -23,4 +21,11 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :production, :staging do
+  gem 'pg'
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
 end

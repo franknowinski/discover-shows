@@ -1,0 +1,20 @@
+<div id="browse-concerts-container">
+  <h2 id="browse-concerts-header">Browse Concerts</h2><hr>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <input type="text" id="browse-concerts-searchbar" class="form-control" placeholder="Search Concert" ng-model="events.search" ng-change="events.refilter()">
+    </div>
+    <div class="col-sm-2">
+      <p id="browse-sort-menu">Sort by:
+        <a href="" ng-click="sort = '-date'; reverse = !reverse">Date</a>
+      </p>
+    </div>
+  </div>
+
+  <ul ng-repeat="concert in events.filteredList | orderBy:sort:reverse">
+    <browse-concert concert="concert"></browse-concert>
+  </ul>
+
+  <span ng-show="events.filteredList.length == 0" id="concert-not-found">Concert not found</span>
+</div>

@@ -1,0 +1,22 @@
+<div class="row upcoming-concert-tab">
+  <div class="col-sm-3">
+    <img src="{{ artist.show.artist.image_url }}" alt="artist-image" id="artist-image" class="img-rounded">
+  </div>
+  <div class="col-sm-6 concert-details">
+    <p class="concert-artist-name">{{ artist.show.artist.name }}</p>
+    <p class="concert-title">{{ artist.show.concert.title }}</p>
+
+    <address>
+      {{ artist.show.concert.name }}<br>
+      {{ artist.show.concert.city }}, {{ artist.show.concert.state }}
+    </address>
+  </div>
+
+  <div class="col-sm-3 concert-details">
+    <p>{{ artist.show.concert.date | date:'medium' }}</p>
+    <p>Ticket status: {{ artist.show.concert.status | uppercase }}</p>
+    <p ng-hide="artist.show.concert.status == 'unavailable'">
+      <a href="{{ artist.show.concert.ticket_url }}" target="_blank">Buy Tickets</a>
+    </p><br><br>
+  </div>
+</div>
