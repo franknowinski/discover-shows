@@ -14,6 +14,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rails-erd'
 gem 'active_model_serializers'
 gem 'curb'
+gem 'rest-client'
 
 group :development, :test do
   gem 'pry-byebug'
