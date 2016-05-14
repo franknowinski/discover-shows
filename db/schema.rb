@@ -69,4 +69,6 @@ ActiveRecord::Schema.define(version: 20160410023410) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "upcoming_concerts", "concerts"
+  add_foreign_key "upcoming_concerts", "users"
 end

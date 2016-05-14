@@ -9,7 +9,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: discover_showsostgres_test
+  database: discover_shows_test
   pool: 5
   # username: test_postgres
   # password:
@@ -17,7 +17,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: discover_showss_production
+  database: discover_shows_production
   pool: 5
   # username: test_postgres
   # password:
