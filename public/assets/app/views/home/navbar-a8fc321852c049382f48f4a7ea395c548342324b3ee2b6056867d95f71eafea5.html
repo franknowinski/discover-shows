@@ -1,0 +1,14 @@
+<div class="row">
+  <nav class="navbar navbar-inverse container-fluid navbar-fixed-top">
+    <ul class="nav navbar-nav">
+      <li><a ui-sref-active="active" ui-sref="home.artists.id({id: home.topArtist.id})">Top Artists<span class="sr-only">(current)</span></a></li>
+      <li><a ui-sref-active="active" ui-sref="home.upcoming_concerts">Upcoming Concerts</a></li>
+      <li><a ui-sref-active="active" ui-sref="home.browse_concerts">Browse Concerts</a></li>
+      <li><a ui-sref-active="active" href="" ng-click="home.logoutUser()">Logout</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div id="page" class="container">
+  <div ui-view></div>
+</div>

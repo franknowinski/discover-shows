@@ -1,0 +1,30 @@
+<div class="row upcoming-concert-tab">
+  <div class="col-sm-3">
+    <img src="{{ artist.artist.image_url }}" alt="artist-image" id="artist-image" class="img-rounded">
+  </div>
+  <div class="col-sm-6 concert-details">
+    <p class="concert-artist-name">{{ artist.artist.name }}</p>
+    <p class="concert-title">{{ artist.concert.title }}</p>
+
+    <address class="browse-address">
+      {{ artist.concert.name }} <br>
+      {{ artist.concert.city }}, {{ artist.concert.state }}
+    </address>
+  </div>
+
+  <div class="col-sm-3 concert-details">
+    <p>{{ artist.concert.date | date:'medium' }}</p>
+    <p>Ticket status: {{ artist.concert.status | uppercase }}</p>
+    <p><a href="{{ artist.concert.ticket_url }}" target="_blank">Buy Tickets</a></p><br>
+  </div>
+
+  <div class="dropdown" ng-show="artist.users.length > 0">
+    <button type="button" class="dropdown-btn">
+      <span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span>
+      Users Attending
+    </button>
+    <div class="dropdown-content" ng-repeat="user in artist.users">
+      <a>{{ user }}</a>
+    </div>
+  </div>
+</div>
