@@ -2,7 +2,7 @@ angular
   .module('app', ['ui.router', 'templates', 'ngResource', 'ngCookies', 'ngMessages', 'restangular'])
   .config(function($stateProvider, $urlRouterProvider, RestangularProvider){
     RestangularProvider.setBaseUrl('/api/v1');
-
+    
     $stateProvider
       .state('login', {
         url: '/login',
