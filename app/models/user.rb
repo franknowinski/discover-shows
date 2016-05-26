@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :artists
-  has_many :upcoming_concerts
+  has_many :upcoming_concerts, dependent: :destroy
   has_many :concerts, through: :upcoming_concerts
 
   def self.from_omniauth(auth)
@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   end
 
   def top_artists
-    http = Curl.get("https://api.spotify.com/v1/me/top/artists?limit=10") do |http|
+    http = Curl.get("https://api.spotify.com/v1/me/top/artists?limit=25") do |http|
       http.headers['Accept'] = 'application/json',
       http.headers['Authorization'] = "Bearer #{token}"
     end.body_str

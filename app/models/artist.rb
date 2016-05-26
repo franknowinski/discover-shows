@@ -26,7 +26,7 @@ class Artist < ActiveRecord::Base
 
   def upcoming_concerts
     events.each do |event|
-      if event["artists"].first["name"] == self.name && new_event(event)
+      if event["artists"].first["name"].downcase == self.name.downcase && new_event(event)
         self.concerts.create(title: event["title"], date: event["formatted_datetime"], ticket_url: event["ticket_url"], status: event["ticket_status"], name: event["venue"]["name"], city: event["venue"]["city"], state: event["venue"]["region"])
       end
     end
