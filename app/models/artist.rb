@@ -37,9 +37,10 @@ class Artist < ActiveRecord::Base
   end
 
   def events
-    encoded_uri = URI.encode("http://api.bandsintown.com/artists/#{self.name}/events/recommended?location=use_geoip&radius=50&app_id=discover-shows&api_version=2.0&format=json")
-    uri = URI.parse(encoded_uri)
-    response = Net::HTTP.get_response(uri).body
-    JSON.parse(response)
+    escaped_uri = URI.escape("http://api.bandsintown.com/artists/#{self.name}/events/recommended?location=use_geoip&radius=50&app_id=discover-shows&api_version=2.0&format=json")
+    uri = URI.parse(escaped_uri)
+    JSON.parse(Net::HTTP.get_response(uri).body)
   end
 end
+
+encoded_uri = URI.escape("http://api.bandsintown.com/artists/adele/events/recommended?location=use_geoip&radius=50&app_id=discover-shows&api_version=2.0&format=json")
