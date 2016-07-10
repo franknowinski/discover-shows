@@ -19,9 +19,8 @@ class Artist < ActiveRecord::Base
   end
 
   def artist_tracks
-    uri = URI.parse("https://api.spotify.com/v1/artists/#{self.artist_id}/top-tracks?country=SE")
-    response = Net::HTTP.get_response(uri).body
-    JSON.parse(response)
+    uri = URI.parse("https://api.spotify.com/v1/artists/#{self.artist_id}/top-tracks?country=SE").read
+    JSON.parse(uri)
   end
 
   def upcoming_concerts
@@ -38,7 +37,7 @@ class Artist < ActiveRecord::Base
 
   def events
     escaped_uri = URI.escape("https://api.bandsintown.com/artists/#{name}/events/recommended?location=use_geoip&radius=50&app_id=discover-shows&api_version=2.0&format=json")
-    uri = URI.parse(escaped_uri)
-    JSON.parse(Net::HTTP.get_response(uri).body)
+    uri = URI.parse(escaped_uri).read
+    JSON.parse(uri)
   end
 end
