@@ -11,4 +11,4 @@ function HomeController(library, $cookies, LoginService){
 
 angular
   .module('app')
-  .controller('HomeController', HomeController);
+  .controller('HomeController', ['library', '$cookies', 'LoginService', HomeController]);

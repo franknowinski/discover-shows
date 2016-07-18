@@ -16,4 +16,4 @@ function ArtistController(library, ArtistService){
 
 angular
   .module('app')
-  .controller('ArtistController', ArtistController);
+  .controller('ArtistController', ['library', 'ArtistService', ArtistController]);

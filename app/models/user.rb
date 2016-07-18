@@ -13,11 +13,11 @@ class User < ActiveRecord::Base
   end
 
   def top_artists
-    # http = Curl.get("https://api.spotify.com/v1/me/top/artists?limit=25") do |http|
-    #   http.headers['Accept'] = 'application/json',
-    #   http.headers['Authorization'] = "Bearer #{token}"
-    # end.body_str
-    #
-    # JSON.parse(http)
+    http = Curl.get("https://api.spotify.com/v1/me/top/artists?limit=25") do |http|
+      http.headers['Accept'] = 'application/json',
+      http.headers['Authorization'] = "Bearer #{token}"
+    end.body_str
+
+    JSON.parse(http)
   end
 end

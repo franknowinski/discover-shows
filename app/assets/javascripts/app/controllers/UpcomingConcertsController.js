@@ -21,4 +21,4 @@ function UpcomingConcertsController(concerts, $filter, ConcertService){
 
 angular
   .module('app')
-  .controller('UpcomingConcertsController', UpcomingConcertsController);
+  .controller('UpcomingConcertsController', ['concerts', '$filter', 'ConcertService', UpcomingConcertsController]);

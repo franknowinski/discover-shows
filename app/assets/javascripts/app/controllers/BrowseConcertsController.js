@@ -12,4 +12,4 @@ function BrowseConcertsController(artists, $filter){
 
 angular
   .module('app')
-  .controller('BrowseConcertsController', BrowseConcertsController);
+  .controller('BrowseConcertsController', ['artists', '$filter', BrowseConcertsController]);

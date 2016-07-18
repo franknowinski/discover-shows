@@ -11,4 +11,4 @@ function ArtistsController(library, $filter){
 
 angular
   .module('app')
-  .controller('ArtistsController', ArtistsController);
+  .controller('ArtistsController', ['library', '$filter', ArtistsController]);
