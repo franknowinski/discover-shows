@@ -4,7 +4,6 @@ var BrowseConcert = {
   },
   templateUrl: 'app/views/browse_concert.html',
   controller: function(Restangular){
-    // ctrl.$inject = ['Restangular'];
     var ctrl = this;
 
     Restangular.one('artists', this.concert.artist_id).get()
