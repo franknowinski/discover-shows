@@ -1,5 +1,6 @@
 function BrowseConcertsController(artists, $filter){
   var ctrl = this;
+  debugger
   ctrl.artists = artists.concerts;
 
   ctrl.refilter = function(){

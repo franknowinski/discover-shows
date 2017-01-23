@@ -2,10 +2,10 @@ function LoginService($cookies, $location, Restangular){
   Restangular.setBaseUrl('/api/v1');
 
   this.login = function(){
-    Restangular.one('users').get().then(function(res){
-      $cookies.put('id', res.user.id);
-      $cookies.put('name', res.user.id);
-      $cookies.put('email', res.user.id);
+    Restangular.one('users').get().then(function(user){
+      $cookies.put('id', user.id);
+      $cookies.put('name', user.id);
+      $cookies.put('email', user.id);
     });
   };
 

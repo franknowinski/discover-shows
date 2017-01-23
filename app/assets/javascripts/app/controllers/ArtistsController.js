@@ -1,8 +1,8 @@
-function ArtistsController(library, $filter){
+function ArtistsController(artists, $filter){
   var ctrl = this;
 
   ctrl.refilter = function(){
-    ctrl.filteredList = $filter('filter')(library.artists, ctrl.search);
+    ctrl.filteredList = $filter('filter')(artists, ctrl.search);
   };
 
   ctrl.search;

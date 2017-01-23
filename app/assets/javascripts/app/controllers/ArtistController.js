@@ -1,8 +1,8 @@
-function ArtistController(library, ArtistService){
+function ArtistController(artist, ArtistService){
   var ctrl = this;
-  ctrl.artist = library.artist;
-  ctrl.songs = library.artist.songs;
-  ctrl.concerts = library.artist.concerts;
+  ctrl.artist = artist
+  ctrl.songs = artist.songs;
+  ctrl.concerts = artist.concerts;
   ctrl.showPopularityForm = false;
   if (ctrl.concerts.length > 0){ ctrl.hasConcerts = true; };
 
