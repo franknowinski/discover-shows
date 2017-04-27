@@ -1,6 +1,6 @@
 function UpcomingConcertsController(concerts, $filter, ConcertService){
   var ctrl = this;
-  ctrl.upcomingConcerts = concerts.upcoming_concerts;
+  ctrl.upcomingConcerts = concerts;
 
   ctrl.refilter = function(){
     ctrl.filteredList = $filter('filter')(ctrl.upcomingConcerts, ctrl.search);

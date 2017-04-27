@@ -5,7 +5,7 @@ class Artist < ActiveRecord::Base
 
   def self.assign_artists(user)
     user.top_artists["items"].each do |a|
-      artist = self.find_or_create_by(name: a["name"], popularity: a["popularity"], artist_id: a["id"], image_url: a["images"].second["url"])
+      artist = self.find_or_create_by(name: a["name"] || [], popularity: a["popularity"], artist_id: a["id"])
       artist.top_tracks
       artist.upcoming_concerts
       user.artists << artist
@@ -19,8 +19,8 @@ class Artist < ActiveRecord::Base
   end
 
   def artist_tracks
-    uri = URI.parse("https://api.spotify.com/v1/artists/#{self.artist_id}/top-tracks?country=SE").read
-    JSON.parse(uri)
+    response = Faraday.get("https://api.spotify.com/v1/artists/#{self.artist_id}/top-tracks?country=se&format=json").body
+    JSON.parse(response)
   end
 
   def upcoming_concerts
@@ -37,7 +37,7 @@ class Artist < ActiveRecord::Base
 
   def events
     escaped_uri = URI.escape("https://api.bandsintown.com/artists/#{name}/events/recommended?location=use_geoip&radius=50&app_id=discover-shows&api_version=2.0&format=json")
-    uri = URI.parse(escaped_uri).read
+    uri = Faraday.get(escaped_uri).body
     JSON.parse(uri)
   end
 end

@@ -10,10 +10,6 @@ var Concert = {
       ConcertService.addUpcomingConcert(this.concert.id);
       ctrl.attending = true;
     };
-
-    // ctrl.attending = this.concert.users.some(function(user){
-      // return user.id == $cookies.get('id');
-    // });
   },
   controllerAs: 'artist'
 }

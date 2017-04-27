@@ -23,7 +23,7 @@ angular
         templateUrl: 'app/views/artists.html',
         controller: 'ArtistsController as library',
         resolve: {
-          library: function(Restangular){
+          artists: function(Restangular){
             return Restangular.one('artists').get();
           }
         }
@@ -33,7 +33,7 @@ angular
         templateUrl: 'app/views/artist.html',
         controller: 'ArtistController as artist',
         resolve: {
-          library: function($stateParams, Restangular){
+          artist: function($stateParams, Restangular){
             return Restangular.one('artists', $stateParams.id).get();
           }
         }

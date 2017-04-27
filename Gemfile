@@ -15,9 +15,11 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rails-erd'
 gem 'active_model_serializers'
 gem 'curb'
+gem 'faraday'
 
 group :development, :test do
-  gem 'pry-byebug'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :development do
@@ -25,10 +27,8 @@ group :development do
   gem 'spring'
 end
 
-gem 'rails_12factor', group: :production
 
 group :production, :staging do
-  gem 'pg'
   gem "rails_12factor"
   gem "rails_stdout_logging"
   gem "rails_serve_static_assets"

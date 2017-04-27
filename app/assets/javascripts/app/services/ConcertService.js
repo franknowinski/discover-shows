@@ -2,7 +2,7 @@ function ConcertService($cookies, Restangular){
   var userId = $cookies.get('id');
 
   this.addUpcomingConcert = function(concert_id){
-    Restangular.one('users', userId).post('upcoming_concerts', {concert_id})
+    Restangular.one('users', userId).post('upcoming_concerts', {concert_id});
   };
 
   this.removeUpcomingConcert = function(concert_id){
